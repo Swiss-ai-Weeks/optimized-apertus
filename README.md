@@ -59,3 +59,13 @@ Measure + aggregate (unified JSON schema per run):
     analyze/table.py        # print results/ as one table (Pareto view)
 
 `quality{}` is the slot for lm-eval-harness scores (run separately, merged by config name).
+
+### Single-model spec-decode (recommended)
+Keep speculation on ONE model (no separate draft, one GPU, the other stays free):
+
+    serve/launch.sh ngram <model_id> <gpu> <port> [nspec] [bf16|fp8]
+
+Uses vLLM n-gram / prompt-lookup (self-speculation) - works on any model, no extra checkpoint.
+Best on repetitive / structured / long-context output. Two-model `specdec` remains available as
+an experimental comparison. EAGLE/Medusa would give more but need a trained draft head (none for Apertus).
+NOTE: verify the n-gram speculative-config field names on first run for this vLLM build.
