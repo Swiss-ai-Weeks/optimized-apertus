@@ -69,3 +69,25 @@ Uses vLLM n-gram / prompt-lookup (self-speculation) - works on any model, no ext
 Best on repetitive / structured / long-context output. Two-model `specdec` remains available as
 an experimental comparison. EAGLE/Medusa would give more but need a trained draft head (none for Apertus).
 NOTE: verify the n-gram speculative-config field names on first run for this vLLM build.
+
+## Status matrix (at a glance)
+
+Legend: OK = verified end-to-end &nbsp;|&nbsp; ~cfg = config accepted, not full-request tested &nbsp;|&nbsp; built = written, not run live &nbsp;|&nbsp; no = unsupported
+
+| Mode | What it is | GPUs | Apertus **2509** (text) | Apertus **v1.5** (multimodal) |
+|------|------------|:----:|:-----------------------:|:------------------------------:|
+| **single**  | one model, plain serving                         | 1 | NIM **OK** &middot; raw vLLM **OK** | swiss-ai img **OK** (text) |
+| **ngram**   | single-model self-spec (prompt-lookup, no draft) | 1 | NIM(env-file) **built** &middot; raw vLLM **built** | swiss-ai img **built** |
+| **specdec** | two-model: 8B draft -> 70B target                | 2 (TP=2) | raw vLLM **OK** &middot; NIM(env-file) **~cfg** | swiss-ai img **built** |
+
+**Engine rule:** `*v1.5*` -> swiss-ai release image only (NIM & upstream vLLM don't know `apertus1p5`); everything else -> NIM vLLM (or raw vLLM).
+
+**Verified numbers:** 2509 specdec 8B->70B = mean acceptance length **3.32**, **~1.7x** tok/s vs plain 70B-FP8 (output == plain 70B).
+
+**NIM + spec-decode:** `--speculative-config` JSON must be passed via `--env-file` (NIM's shlex strips escaped quotes otherwise). Raw vLLM has no such issue.
+
+### Currently serving
+| Endpoint | Model | Engine | GPU |
+|----------|-------|--------|:---:|
+| `:8000`  | Apertus-8B-Instruct-2509 | NIM (text)          | 0 |
+| `:8020`  | Apertus-v1.5-8B          | swiss-ai (multimodal) | 1 |
