@@ -6,4 +6,8 @@ docker run --gpus '"device=0"' \
   -p 8000:8000 \
   nvcr.io/nim/nvidia/vllm-model-free-nim:2.1.1 \
   --dtype bfloat16 \
-  --gpu-memory-utilization 0.90
+  --gpu-memory-utilization 0.90 \
+  --enable-prefix-caching \
+  --max-num-batched-tokens 8192 \
+  --max-num-seqs 32 \
+  --max-model-len 8192
