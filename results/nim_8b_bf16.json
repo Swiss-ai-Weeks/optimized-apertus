@@ -1,0 +1,20 @@
+{
+  "config": "nim_8b_bf16",
+  "model": "Apertus-8B-Instruct-2509",
+  "concurrency": 8,
+  "requests": 32,
+  "perf": {
+    "tok_s": 1063.61,
+    "p50_s": 1.176,
+    "p99_s": 1.577,
+    "wall_s": 5.21,
+    "completion_tokens": 5546,
+    "errors": 0
+  },
+  "energy": {
+    "avg_gpu_w": 410.9,
+    "tok_per_wh": 9317.62
+  },
+  "quality": {},
+  "cost": {}
+}

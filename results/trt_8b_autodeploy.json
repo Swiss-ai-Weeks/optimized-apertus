@@ -1,0 +1,20 @@
+{
+  "config": "trt_8b_autodeploy",
+  "model": "b946d40447b2b597999b9c86d44bee0b452c919f",
+  "concurrency": 8,
+  "requests": 32,
+  "perf": {
+    "tok_s": 209.8,
+    "p50_s": 5.77,
+    "p99_s": 12.309,
+    "wall_s": 26.63,
+    "completion_tokens": 5586,
+    "errors": 0
+  },
+  "energy": {
+    "avg_gpu_w": 252.0,
+    "tok_per_wh": 2996.77
+  },
+  "quality": {},
+  "cost": {}
+}
