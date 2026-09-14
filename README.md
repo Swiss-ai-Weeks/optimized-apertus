@@ -36,3 +36,26 @@ A raw-vLLM fallback (bypassing the NIM wrapper) is included in the script and is
 ## TensorRT-LLM path
 Parked: toolchain absent (pull needs NGC login to `nvcr.io/nvidia/tensorrt-llm`) and Apertus
 (`ApertusForCausalLM`) not confirmed supported by TRT-LLM `convert_checkpoint`. vLLM path used instead.
+
+## Benchmark constructor
+One launcher for any config (GPU-exclusive -> run benchmarks in a dedicated window):
+
+    serve/launch.sh single  <model_id> <gpu> <port> [bf16|fp8]
+    serve/launch.sh specdec <target_id> <draft_id> <port> [nspec]   # draft->target, TP=2
+
+Engine auto-selected: `*v1.5*` -> swiss-ai release image; else NIM vLLM.
+Spec-decode requires draft & target to share a tokenizer family:
+- valid:   2509-8B -> 2509-70B (via NIM env-file);  v1.5-8B -> v1.5-70B (swiss-ai img, experimental)
+- invalid: any 2509 <-> v1.5 mix (different vocab/arch)
+
+2x H100 (188 GB) cannot co-host all models + a spec-decode engine at once - configs are
+mutually exclusive and swapped in one at a time by the matrix runner.
+
+Measure + aggregate (unified JSON schema per run):
+
+    bench/bench.py --url http://localhost:PORT --model ID --name NAME [--concurrency N --requests M --max-tokens T]
+      -> results/<name>.json  {perf:{tok_s,p50_s,p99_s}, energy:{avg_gpu_w,tok_per_wh}, quality:{}, cost:{}}
+    bench/run_matrix.sh     # launch each CONFIG -> wait ready -> benchmark -> teardown
+    analyze/table.py        # print results/ as one table (Pareto view)
+
+`quality{}` is the slot for lm-eval-harness scores (run separately, merged by config name).
