@@ -1,0 +1,4 @@
+# Benchmark client, isolated from the server image so its deps can't disturb the fork.
+FROM python:3.12-slim
+RUN pip install --no-cache-dir aiperf transformers matplotlib
+WORKDIR /work

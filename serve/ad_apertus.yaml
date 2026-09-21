@@ -1,0 +1,7 @@
+transforms:
+  fuse_rmsnorm:
+    enabled: false
+  fuse_add_rms_norm:
+    enabled: false
+  fuse_allreduce_residual_rmsnorm:
+    enabled: false

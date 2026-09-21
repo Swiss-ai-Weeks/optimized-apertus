@@ -1,0 +1,2 @@
+PREFIX_ARGS="--shared-system-prompt-length 3072"
+TOKENIZER="swiss-ai/Apertus-v1.5-8B"

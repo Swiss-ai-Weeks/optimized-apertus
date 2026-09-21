@@ -1,0 +1,879 @@
+# AIPerf Server Metrics Export (CSV)
+# aiperf_version: 0.12.0
+# schema_version: 1.0
+# benchmark_id: ac2109a74edf
+# Note: Same benchmark_id and version appear in JSON and Parquet exports
+#
+Endpoint,Type,Metric,Unit,avg,min,max,std,p1,p5,p10,p25,p50,p75,p90,p95,p99,dp_rank,dynamo_component,dynamo_namespace,model,policy_class,router_worker_id,worker_id,worker_type,phase,stage,worker,Description
+localhost:8090,gauge,dynamo_frontend_disconnected_clients,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,,Number of disconnected clients
+localhost:8090,gauge,dynamo_frontend_lora_churn_loads_total,count,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,,Total LoRA loads (new placements) this tick
+localhost:8090,gauge,dynamo_frontend_lora_churn_unloads_total,count,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,,Total LoRA unloads (removed placements) this tick
+localhost:8090,gauge,dynamo_frontend_lora_overflow_count,count,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,,MCF solver overflow count (unplaceable replicas)
+localhost:8090,gauge,dynamo_request_plane_inflight_requests,requests,63.0652,0.0000,64.0000,6.4558,35.8600,62.0000,62.9000,64.0000,64.0000,64.0000,64.0000,64.0000,64.0000,,,,,,,,,,,,Currently in-flight requests at AddressedPushRouter
+localhost:8090,gauge,dynamo_tokio_alive_tasks,,372.9913,119.0000,375.0000,16.9986,361.0000,369.0000,371.0000,375.0000,375.0000,375.0000,375.0000,375.0000,375.0000,,,,,,,,,,,,Number of alive tasks in the runtime
+localhost:8090,gauge,dynamo_tokio_blocking_idle_threads,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,,Number of idle blocking threads
+localhost:8090,gauge,dynamo_tokio_blocking_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,,Number of tasks in the blocking thread pool queue
+localhost:8090,gauge,dynamo_tokio_blocking_threads,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,,Number of blocking threads
+localhost:8090,gauge,dynamo_tokio_global_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,,Number of tasks in the runtime global queue
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,433.9652,429.0000,1000.0000,53.1296,429.0000,429.0000,429.0000,429.0000,429.0000,429.0000,429.0000,429.0000,429.0000,,,,,,,,,,,0,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,1,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,10,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,992.8522,178.0000,1000.0000,76.4843,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,100,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,174.3130,33.0000,1000.0000,129.5843,35.3200,68.9000,97.0000,125.0000,159.0000,186.0000,207.0000,336.2000,915.9000,,,,,,,,,,,101,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,102,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,103,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,277.7696,28.0000,1000.0000,282.4288,31.7700,85.6000,114.0000,130.2500,172.0000,242.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,104,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,191.9739,28.0000,1000.0000,194.8615,28.5800,71.0500,85.0000,119.0000,143.0000,201.0000,217.2000,771.3500,1000.0000,,,,,,,,,,,105,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,106,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,107,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,992.6957,160.0000,1000.0000,78.1592,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,108,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,992.9913,194.0000,1000.0000,74.9956,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,109,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,11,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,110,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,992.9565,190.0000,1000.0000,75.3678,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,111,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,991.9304,72.0000,1000.0000,86.3473,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,112,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,113,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,996.3043,575.0000,1000.0000,39.5448,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,114,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,200.3783,76.0000,1000.0000,275.7065,76.0000,76.0000,76.0000,76.0000,76.0000,201.0000,563.5000,1000.0000,1000.0000,,,,,,,,,,,115,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,555.7652,37.0000,1000.0000,425.2359,38.7400,81.8500,118.0000,130.0000,227.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,116,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,117,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,253.0870,149.0000,254.0000,9.7699,254.0000,254.0000,254.0000,254.0000,254.0000,254.0000,254.0000,254.0000,254.0000,,,,,,,,,,,118,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,119,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,12,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,637.1826,634.0000,1000.0000,34.0551,634.0000,634.0000,634.0000,634.0000,634.0000,634.0000,634.0000,634.0000,634.0000,,,,,,,,,,,120,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,121,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,115.4435,115.0000,166.0000,4.7454,115.0000,115.0000,115.0000,115.0000,115.0000,115.0000,115.0000,115.0000,115.0000,,,,,,,,,,,122,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,997.1652,674.0000,1000.0000,30.3332,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,123,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,124,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,17.0000,17.0000,17.0000,0.0000,17.0000,17.0000,17.0000,17.0000,17.0000,17.0000,17.0000,17.0000,17.0000,,,,,,,,,,,125,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,126,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,660.9739,658.0000,1000.0000,31.8220,658.0000,658.0000,658.0000,658.0000,658.0000,658.0000,658.0000,658.0000,658.0000,,,,,,,,,,,127,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,13,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,14,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,15,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,16,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,17,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,18,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,19,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,2,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,20,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,21,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,22,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,23,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,24,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,25,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,26,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,27,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,28,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,29,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,3,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,30,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,31,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,32,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,33,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,34,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,35,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,36,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,37,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,38,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,39,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,4,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,40,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,41,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,42,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,43,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,44,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,45,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,46,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,47,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,48,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,49,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,5,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,50,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,51,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,52,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,53,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,54,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,55,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,56,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,57,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,58,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,59,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,6,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,60,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,61,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,62,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,63,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,64,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,65,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,66,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,67,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,68,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,69,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,7,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,70,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,34.7217,3.0000,35.0000,2.9775,35.0000,35.0000,35.0000,35.0000,35.0000,35.0000,35.0000,35.0000,35.0000,,,,,,,,,,,71,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,119.9739,3.0000,121.0000,10.9795,121.0000,121.0000,121.0000,121.0000,121.0000,121.0000,121.0000,121.0000,121.0000,,,,,,,,,,,72,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,296.5913,3.0000,1000.0000,249.0060,76.0000,97.0000,117.7000,141.0000,179.0000,434.0000,610.0000,1000.0000,1000.0000,,,,,,,,,,,73,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,240.4739,3.0000,1000.0000,265.4466,72.0000,79.0000,89.0000,107.0000,146.0000,186.0000,767.0000,1000.0000,1000.0000,,,,,,,,,,,74,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,220.4435,3.0000,1000.0000,216.2663,35.0000,75.0000,116.9000,128.0000,164.0000,194.0000,303.0000,1000.0000,1000.0000,,,,,,,,,,,75,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,991.3304,3.0000,1000.0000,92.7675,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,76,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,302.3826,3.0000,1000.0000,242.6229,92.0000,126.3500,137.0000,151.0000,201.0000,305.0000,657.0000,884.3500,1000.0000,,,,,,,,,,,77,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,367.5478,3.0000,1000.0000,369.7072,97.0000,124.0000,138.6000,146.0000,146.0000,842.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,78,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,991.3304,3.0000,1000.0000,92.7675,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,79,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,8,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,174.5652,3.0000,1000.0000,198.1446,20.0000,24.0000,80.0000,106.0000,108.0000,167.2500,199.0000,705.6000,1000.0000,,,,,,,,,,,80,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,991.3304,3.0000,1000.0000,92.7675,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,81,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,992.6609,156.0000,1000.0000,78.5314,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,82,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,270.9652,153.0000,272.0000,11.0726,272.0000,272.0000,272.0000,272.0000,272.0000,272.0000,272.0000,272.0000,272.0000,,,,,,,,,,,83,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,261.3043,34.0000,1000.0000,295.1638,35.1600,58.6000,84.0000,115.0000,158.5000,186.5000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,84,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,993.0000,195.0000,1000.0000,74.9026,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,85,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,992.5391,142.0000,1000.0000,79.8340,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,86,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,995.9304,532.0000,1000.0000,43.5458,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,87,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,306.9435,47.0000,1000.0000,323.4070,49.9000,72.0000,73.0000,132.0000,168.0000,217.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,88,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,992.4522,132.0000,1000.0000,80.7645,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,89,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,3.0000,3.0000,3.0000,0.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,3.0000,,,,,,,,,,,9,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,90,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,336.0739,48.0000,1000.0000,357.4889,55.2500,82.4500,95.0000,121.0000,154.0000,222.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,91,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,92,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,313.2000,52.0000,1000.0000,320.4819,54.6100,89.1000,114.0000,155.5000,179.0000,193.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,93,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,128.6435,121.0000,1000.0000,81.7880,121.0000,121.0000,121.0000,121.0000,121.0000,121.0000,121.0000,121.0000,121.0000,,,,,,,,,,,94,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,992.3478,120.0000,1000.0000,81.8811,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,95,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,96,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,993.6435,269.0000,1000.0000,68.0171,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,97,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,98,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_busy_ratio,ratio,1000.0000,1000.0000,1000.0000,0.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,1000.0000,,,,,,,,,,,99,Worker busy ratio (0-1) as integer mill ratio; >950 = saturated
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,0,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,1,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,10,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,100,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0130,0.0000,1.0000,0.1137,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.7100,,,,,,,,,,,101,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,102,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,103,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,104,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0261,0.0000,1.0000,0.1597,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.0000,,,,,,,,,,,105,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,106,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,107,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,108,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,109,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,11,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,110,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,111,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,112,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,113,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,114,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,115,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0261,0.0000,2.0000,0.2274,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.4200,,,,,,,,,,,116,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,117,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,118,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,119,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,12,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,120,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,121,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,122,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,123,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,124,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,125,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,126,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,127,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,13,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,14,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,15,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,16,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,17,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,18,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,19,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,2,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,20,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,21,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,22,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,23,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,24,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,25,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,26,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,27,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,28,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,29,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,3,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,30,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,31,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,32,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,33,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,34,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,35,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,36,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,37,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,38,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,39,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,4,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,40,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,41,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,42,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,43,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,44,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,45,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,46,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,47,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,48,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,49,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,5,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,50,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,51,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,52,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,53,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,54,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,55,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,56,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,57,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,58,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,59,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,6,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,60,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,61,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,62,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,63,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,64,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,65,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,66,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,67,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,68,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,69,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,7,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,70,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,71,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,72,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.1826,0.0000,13.0000,1.4811,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,9.5200,,,,,,,,,,,73,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0130,0.0000,1.0000,0.1137,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.7100,,,,,,,,,,,74,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0130,0.0000,1.0000,0.1137,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.7100,,,,,,,,,,,75,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,76,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0522,0.0000,3.0000,0.3581,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,2.4200,,,,,,,,,,,77,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,78,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,79,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,8,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,80,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,81,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,82,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,83,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0261,0.0000,2.0000,0.2274,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.4200,,,,,,,,,,,84,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,85,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,86,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,87,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0130,0.0000,1.0000,0.1137,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.7100,,,,,,,,,,,88,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,89,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,9,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,90,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0522,0.0000,2.0000,0.2754,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,1.7100,,,,,,,,,,,91,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,92,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,93,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,94,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,95,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,96,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,97,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,98,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_local_queue_depth,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,,,99,Number of tasks in worker local queue
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,450634.3304,429511.0000,2858694.0000,226027.3511,429511.0000,429511.0000,429511.0000,429511.0000,429511.0000,429511.0000,429511.0000,429511.0000,429511.0000,,,,,,,,,,,0,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,1,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,10,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3262930.5130,178491.0000,3289987.0000,289514.2930,3289987.0000,3289987.0000,3289987.0000,3289987.0000,3289987.0000,3289987.0000,3289987.0000,3289987.0000,3289987.0000,,,,,,,,,,,100,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,189373.3043,33258.0000,2113896.0000,238535.8351,35736.6300,69623.0500,97994.0000,125870.0000,159531.5000,186865.0000,207005.0000,336315.2000,1706906.2300,,,,,,,,,,,101,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,4101703.8348,2937631.0000,4111915.0000,109263.1975,4111915.0000,4111915.0000,4111915.0000,4111915.0000,4111915.0000,4111915.0000,4111915.0000,4111915.0000,4111915.0000,,,,,,,,,,,102,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,5367209.4087,2576536.0000,5391689.0000,261940.5683,5391689.0000,5391689.0000,5391689.0000,5391689.0000,5391689.0000,5391689.0000,5391689.0000,5391689.0000,5391689.0000,,,,,,,,,,,103,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,400497.4696,28789.0000,3481061.0000,659040.6806,32571.4700,86019.2000,114438.0000,130659.7500,172522.0000,242795.0000,1287452.0000,1939582.4500,3282841.3600,,,,,,,,,,,104,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,289281.7261,28084.0000,3813828.0000,657215.6108,28787.8300,71310.0500,85954.0000,119971.0000,143313.5000,201873.2500,217511.0000,772003.9000,3780368.9600,,,,,,,,,,,105,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,6404435.1391,1061499.0000,6451303.0000,501503.2300,6451303.0000,6451303.0000,6451303.0000,6451303.0000,6451303.0000,6451303.0000,6451303.0000,6451303.0000,6451303.0000,,,,,,,,,,,106,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,1439541.6435,1430536.0000,2466185.0000,96363.6746,1430536.0000,1430536.0000,1430536.0000,1430536.0000,1430536.0000,1430536.0000,1430536.0000,1430536.0000,1430536.0000,,,,,,,,,,,107,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,4639549.2957,160751.0000,4678837.0000,420392.7866,4678837.0000,4678837.0000,4678837.0000,4678837.0000,4678837.0000,4678837.0000,4678837.0000,4678837.0000,4678837.0000,,,,,,,,,,,108,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,4881510.6261,194814.0000,4922622.0000,439906.7170,4922622.0000,4922622.0000,4922622.0000,4922622.0000,4922622.0000,4922622.0000,4922622.0000,4922622.0000,4922622.0000,,,,,,,,,,,109,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,11,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,5354547.6522,2942268.0000,5375708.0000,226423.4507,5375708.0000,5375708.0000,5375708.0000,5375708.0000,5375708.0000,5375708.0000,5375708.0000,5375708.0000,5375708.0000,,,,,,,,,,,110,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,4336273.9913,190549.0000,4372640.0000,389129.5759,4372640.0000,4372640.0000,4372640.0000,4372640.0000,4372640.0000,4372640.0000,4372640.0000,4372640.0000,4372640.0000,,,,,,,,,,,111,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,1853062.5565,72560.0000,1868681.0000,167123.0499,1868681.0000,1868681.0000,1868681.0000,1868681.0000,1868681.0000,1868681.0000,1868681.0000,1868681.0000,1868681.0000,,,,,,,,,,,112,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,6983501.7739,4458490.0000,7005651.0000,237004.8092,7005651.0000,7005651.0000,7005651.0000,7005651.0000,7005651.0000,7005651.0000,7005651.0000,7005651.0000,7005651.0000,,,,,,,,,,,113,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,5375378.8957,575739.0000,5417481.0000,450507.8945,5417481.0000,5417481.0000,5417481.0000,5417481.0000,5417481.0000,5417481.0000,5417481.0000,5417481.0000,5417481.0000,,,,,,,,,,,114,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,421293.2652,76003.0000,4183772.0000,955539.5811,76003.0000,76003.0000,76003.0000,76003.0000,76003.0000,201742.0000,629043.9000,3359091.0000,3359091.0000,,,,,,,,,,,115,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,2887402.7261,37306.0000,7209609.0000,3340496.3042,39093.8500,82184.2000,118650.0000,130026.0000,227141.0000,7209609.0000,7209609.0000,7209609.0000,7209609.0000,,,,,,,,,,,116,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,1453467.6348,1449704.0000,1882522.0000,40272.2669,1449704.0000,1449704.0000,1449704.0000,1449704.0000,1449704.0000,1449704.0000,1449704.0000,1449704.0000,1449704.0000,,,,,,,,,,,117,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,253545.5565,149983.0000,254454.0000,9720.6770,254454.0000,254454.0000,254454.0000,254454.0000,254454.0000,254454.0000,254454.0000,254454.0000,254454.0000,,,,,,,,,,,118,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,5517785.7826,3809243.0000,5532773.0000,160368.7002,5532773.0000,5532773.0000,5532773.0000,5532773.0000,5532773.0000,5532773.0000,5532773.0000,5532773.0000,5532773.0000,,,,,,,,,,,119,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,12,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,639574.5565,634903.0000,1172132.0000,49987.3611,634903.0000,634903.0000,634903.0000,634903.0000,634903.0000,634903.0000,634903.0000,634903.0000,634903.0000,,,,,,,,,,,120,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,7450592.0522,4090220.0000,7480069.0000,315414.1083,7480069.0000,7480069.0000,7480069.0000,7480069.0000,7480069.0000,7480069.0000,7480069.0000,7480069.0000,7480069.0000,,,,,,,,,,,121,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,116366.4348,115924.0000,166804.0000,4734.2138,115924.0000,115924.0000,115924.0000,115924.0000,115924.0000,115924.0000,115924.0000,115924.0000,115924.0000,,,,,,,,,,,122,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,2512401.6783,674913.0000,2528520.0000,172471.9299,2528520.0000,2528520.0000,2528520.0000,2528520.0000,2528520.0000,2528520.0000,2528520.0000,2528520.0000,2528520.0000,,,,,,,,,,,123,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,5843407.5652,1943988.0000,5877613.0000,366010.6459,5877613.0000,5877613.0000,5877613.0000,5877613.0000,5877613.0000,5877613.0000,5877613.0000,5877613.0000,5877613.0000,,,,,,,,,,,124,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,17306.0000,17306.0000,17306.0000,0.0000,17306.0000,17306.0000,17306.0000,17306.0000,17306.0000,17306.0000,17306.0000,17306.0000,17306.0000,,,,,,,,,,,125,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,5128179.6261,1961559.0000,5155957.0000,297228.0467,5155957.0000,5155957.0000,5155957.0000,5155957.0000,5155957.0000,5155957.0000,5155957.0000,5155957.0000,5155957.0000,,,,,,,,,,,126,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,676763.9913,658050.0000,2810159.0000,200246.5423,658050.0000,658050.0000,658050.0000,658050.0000,658050.0000,658050.0000,658050.0000,658050.0000,658050.0000,,,,,,,,,,,127,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,13,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,14,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,15,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,16,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,17,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,18,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,19,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,2,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,20,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,21,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,22,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,23,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,24,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,25,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,26,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,27,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,28,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,29,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,3,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,30,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,31,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,32,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,33,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,34,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,35,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,36,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,37,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,38,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,39,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,4,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,40,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,41,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,42,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,43,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,44,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,45,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,46,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,47,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,48,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,49,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,5,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,50,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,51,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,52,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,53,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,54,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,55,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,56,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,57,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,58,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,59,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,6,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,60,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,61,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,62,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,63,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,64,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,65,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,66,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,67,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,68,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,69,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,7,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,70,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,35235.6696,3278.0000,35516.0000,2999.6380,35516.0000,35516.0000,35516.0000,35516.0000,35516.0000,35516.0000,35516.0000,35516.0000,35516.0000,,,,,,,,,,,71,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,120288.5913,3278.0000,121315.0000,10982.9479,121315.0000,121315.0000,121315.0000,121315.0000,121315.0000,121315.0000,121315.0000,121315.0000,121315.0000,,,,,,,,,,,72,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,394604.6565,3278.0000,3712957.0000,623575.1184,76368.0000,97525.0000,117789.8000,141914.0000,179106.0000,434441.0000,610723.0000,1467000.0000,3521539.3100,,,,,,,,,,,73,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,388434.2478,3278.0000,4123189.0000,773447.6636,72784.0000,79896.0000,89656.0000,107674.0000,146357.0000,186879.0000,767272.0000,2458580.1000,3862031.5300,,,,,,,,,,,74,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,409780.5826,3278.0000,4262379.0000,935417.2265,35880.0000,75956.0000,117779.2000,128273.0000,164579.0000,194438.0000,303305.0000,3394580.3000,4262379.0000,,,,,,,,,,,75,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,1805090.6261,3278.0000,1820896.0000,169123.2739,1820896.0000,1820896.0000,1820896.0000,1820896.0000,1820896.0000,1820896.0000,1820896.0000,1820896.0000,1820896.0000,,,,,,,,,,,76,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,463938.0174,3278.0000,5195199.0000,906533.5943,92938.0000,126985.0000,137969.0000,151904.0000,201443.0000,305465.0000,657825.0000,1947908.0000,5195199.0000,,,,,,,,,,,77,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,1384409.2348,3278.0000,5445214.0000,2188182.7108,97138.0000,124164.0000,139170.2000,146518.0000,146518.0000,1035189.0000,5445214.0000,5445214.0000,5445214.0000,,,,,,,,,,,78,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,2164192.6087,3278.0000,2183148.0000,202829.6105,2183148.0000,2183148.0000,2183148.0000,2183148.0000,2183148.0000,2183148.0000,2183148.0000,2183148.0000,2183148.0000,,,,,,,,,,,79,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,8,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,226122.0174,3278.0000,3434509.0000,462142.8139,20906.0000,24873.0000,80329.2000,106537.0000,108217.0000,168095.5000,199366.0000,705902.2000,2964002.5600,,,,,,,,,,,80,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,2486529.0957,3278.0000,2508312.0000,233085.0328,2508312.0000,2508312.0000,2508312.0000,2508312.0000,2508312.0000,2508312.0000,2508312.0000,2508312.0000,2508312.0000,,,,,,,,,,,81,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3630300.7913,156925.0000,3660769.0000,326020.9617,3660769.0000,3660769.0000,3660769.0000,3660769.0000,3660769.0000,3660769.0000,3660769.0000,3660769.0000,3660769.0000,,,,,,,,,,,82,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,271162.3304,153780.0000,272192.0000,11017.8404,272192.0000,272192.0000,272192.0000,272192.0000,272192.0000,272192.0000,272192.0000,272192.0000,272192.0000,,,,,,,,,,,83,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,357595.8261,34318.0000,2336111.0000,549566.5856,35487.5700,59073.5000,84990.0000,115406.0000,158611.0000,186850.2500,1564383.0000,1564383.0000,2297027.4100,,,,,,,,,,,84,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,6153331.2087,195829.0000,6205590.0000,559188.1547,6205590.0000,6205590.0000,6205590.0000,6205590.0000,6205590.0000,6205590.0000,6205590.0000,6205590.0000,6205590.0000,,,,,,,,,,,85,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,2211552.6609,142756.0000,2229700.0000,194183.1571,2229700.0000,2229700.0000,2229700.0000,2229700.0000,2229700.0000,2229700.0000,2229700.0000,2229700.0000,2229700.0000,,,,,,,,,,,86,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,5066768.4783,532815.0000,5106540.0000,425569.8094,5106540.0000,5106540.0000,5106540.0000,5106540.0000,5106540.0000,5106540.0000,5106540.0000,5106540.0000,5106540.0000,,,,,,,,,,,87,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,421232.3000,47394.0000,3114141.0000,620028.3409,50284.1400,72399.0000,73247.0000,132135.0000,168031.0000,217703.0000,1410929.0000,1527433.0000,2992796.8800,,,,,,,,,,,88,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3167233.2870,132700.0000,3193852.0000,284829.9522,3193852.0000,3193852.0000,3193852.0000,3193852.0000,3193852.0000,3193852.0000,3193852.0000,3193852.0000,3193852.0000,,,,,,,,,,,89,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3278.0000,3278.0000,3278.0000,0.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,3278.0000,,,,,,,,,,,9,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,5553769.6609,1158575.0000,5592324.0000,412545.5109,5592324.0000,5592324.0000,5592324.0000,5592324.0000,5592324.0000,5592324.0000,5592324.0000,5592324.0000,5592324.0000,,,,,,,,,,,90,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,913585.5870,48735.0000,3842883.0000,1480783.0734,55845.5100,82752.6000,95682.0000,121942.0000,154429.0000,222795.0000,3842883.0000,3842883.0000,3842883.0000,,,,,,,,,,,91,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,1097393.1565,1080176.0000,3060149.0000,184229.8634,1080176.0000,1080176.0000,1080176.0000,1080176.0000,1080176.0000,1080176.0000,1080176.0000,1080176.0000,1080176.0000,,,,,,,,,,,92,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,855058.6391,52095.0000,6536445.0000,1797259.8043,54773.1500,89354.4500,114108.0000,155771.5000,179421.0000,193764.0000,3087497.0000,6536445.0000,6536445.0000,,,,,,,,,,,93,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,167246.2261,121501.0000,5382202.0000,489490.6278,121501.0000,121501.0000,121501.0000,121501.0000,121501.0000,121501.0000,121501.0000,121501.0000,121501.0000,,,,,,,,,,,94,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,4250620.1826,120763.0000,4286847.0000,387640.1781,4286847.0000,4286847.0000,4286847.0000,4286847.0000,4286847.0000,4286847.0000,4286847.0000,4286847.0000,4286847.0000,,,,,,,,,,,95,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,3875714.3826,1217164.0000,3899035.0000,249539.1241,3899035.0000,3899035.0000,3899035.0000,3899035.0000,3899035.0000,3899035.0000,3899035.0000,3899035.0000,3899035.0000,,,,,,,,,,,96,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,2711316.7304,269862.0000,2732733.0000,229161.9068,2732733.0000,2732733.0000,2732733.0000,2732733.0000,2732733.0000,2732733.0000,2732733.0000,2732733.0000,2732733.0000,,,,,,,,,,,97,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,5281753.3478,1901123.0000,5311408.0000,317315.6098,5311408.0000,5311408.0000,5311408.0000,5311408.0000,5311408.0000,5311408.0000,5311408.0000,5311408.0000,5311408.0000,,,,,,,,,,,98,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_tokio_worker_mean_poll_time_ns,nanoseconds,4472686.7565,2037847.0000,4494045.0000,228541.0064,4494045.0000,4494045.0000,4494045.0000,4494045.0000,4494045.0000,4494045.0000,4494045.0000,4494045.0000,4494045.0000,,,,,,,,,,,99,Worker mean task poll time (nanoseconds)
+localhost:8090,gauge,dynamo_frontend_stage_requests,requests,0.1652,0.0000,4.0000,0.5518,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,2.0000,2.0000,,,,,,,,,,preprocess,,Number of requests currently in the given pipeline stage
+localhost:8090,gauge,dynamo_frontend_stage_requests,requests,9.4565,0.0000,64.0000,11.9129,0.0000,0.0000,0.0000,0.0000,8.0000,15.0000,19.0000,26.2000,61.4200,,,,,,,,,aggregated,dispatch,,Number of requests currently in the given pipeline stage
+localhost:8090,gauge,dynamo_frontend_stage_requests,requests,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,,,aggregated,route,,Number of requests currently in the given pipeline stage
+localhost:8090,gauge,dynamo_frontend_active_requests,requests,63.2261,0.0000,64.0000,6.4470,36.4400,64.0000,64.0000,64.0000,64.0000,64.0000,64.0000,64.0000,64.0000,,,,swiss-ai/Apertus-v1.5-8B,,,,,,,,"Number of requests currently being handled by the frontend, from HTTP handler entry to response completion"
+localhost:8090,gauge,dynamo_frontend_inflight_requests,requests,63.2304,0.0000,64.0000,6.4466,36.4400,64.0000,64.0000,64.0000,64.0000,64.0000,64.0000,64.0000,64.0000,,,,swiss-ai/Apertus-v1.5-8B,,,,,,,,Number of inflight requests
+localhost:8090,gauge,dynamo_frontend_model_context_length,tokens,32768.0000,32768.0000,32768.0000,0.0000,32768.0000,32768.0000,32768.0000,32768.0000,32768.0000,32768.0000,32768.0000,32768.0000,32768.0000,,,,swiss-ai/Apertus-v1.5-8B,,,,,,,,Maximum context length in tokens for a worker serving the model
+localhost:8090,gauge,dynamo_frontend_model_kv_cache_block_size,tokens,16.0000,16.0000,16.0000,0.0000,16.0000,16.0000,16.0000,16.0000,16.0000,16.0000,16.0000,16.0000,16.0000,,,,swiss-ai/Apertus-v1.5-8B,,,,,,,,KV cache block size in tokens for a worker serving the model
+localhost:8090,gauge,dynamo_frontend_model_max_num_batched_tokens,tokens,8192.0000,8192.0000,8192.0000,0.0000,8192.0000,8192.0000,8192.0000,8192.0000,8192.0000,8192.0000,8192.0000,8192.0000,8192.0000,,,,swiss-ai/Apertus-v1.5-8B,,,,,,,,Maximum number of batched tokens for a worker serving the model
+localhost:8090,gauge,dynamo_frontend_model_max_num_seqs,,1024.0000,1024.0000,1024.0000,0.0000,1024.0000,1024.0000,1024.0000,1024.0000,1024.0000,1024.0000,1024.0000,1024.0000,1024.0000,,,,swiss-ai/Apertus-v1.5-8B,,,,,,,,Maximum number of sequences for a worker serving the model
+localhost:8090,gauge,dynamo_frontend_model_migration_limit,,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,swiss-ai/Apertus-v1.5-8B,,,,,,,,Maximum number of request migrations allowed for the model
+localhost:8090,gauge,dynamo_frontend_model_total_kv_blocks,blocks,28353.0000,28353.0000,28353.0000,0.0000,28353.0000,28353.0000,28353.0000,28353.0000,28353.0000,28353.0000,28353.0000,28353.0000,28353.0000,,,,swiss-ai/Apertus-v1.5-8B,,,,,,,,Total KV cache blocks available for a worker serving the model
+localhost:8090,gauge,dynamo_frontend_queued_requests,requests,9.6217,0.0000,64.0000,11.9570,0.0000,0.0000,0.0000,0.0000,8.0000,15.0000,19.0000,26.2000,61.4200,,,,swiss-ai/Apertus-v1.5-8B,,,,,,,,Number of requests in HTTP processing queue
+localhost:8090,gauge,dynamo_frontend_router_queue_pending_cached_tokens,tokens,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,swiss-ai/Apertus-v1.5-8B,default,,,decode,,,,Estimated cached tokens for requests pending in the router scheduler queue
+localhost:8090,gauge,dynamo_frontend_router_queue_pending_isl_tokens,tokens,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,swiss-ai/Apertus-v1.5-8B,default,,,decode,,,,Sum of isl_tokens for requests pending in the router scheduler queue
+localhost:8090,gauge,dynamo_frontend_router_queue_pending_requests,requests,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,swiss-ai/Apertus-v1.5-8B,default,,,decode,,,,Number of requests pending in the router scheduler queue
+localhost:8090,gauge,dynamo_frontend_worker_active_decode_blocks,blocks,8357.7217,0.0000,9409.0000,832.5524,7145.9600,8129.0000,8129.0000,8385.0000,8385.0000,8641.0000,8897.0000,8897.0000,9153.0000,0,,,,,,4533331270526024202,decode,,,,Active KV cache decode blocks per worker
+localhost:8090,gauge,dynamo_frontend_worker_active_decode_blocks,blocks,8168.7783,0.0000,8897.0000,984.7323,1986.2100,7617.0000,7873.0000,8129.0000,8385.0000,8385.0000,8641.0000,8641.0000,8641.0000,0,,,,,,4533331270526024204,decode,,,,Active KV cache decode blocks per worker
+localhost:8090,gauge,dynamo_frontend_worker_active_prefill_tokens,tokens,18017.7783,0.0000,131168.0000,24274.1970,0.0000,0.0000,0.0000,0.0000,12297.0000,28693.0000,37300.9000,53696.9000,125880.2900,0,,,,,,4533331270526024202,decode,,,,Active prefill tokens queued per worker
+localhost:8090,gauge,dynamo_frontend_worker_active_prefill_tokens,tokens,20744.5043,0.0000,131168.0000,25080.1618,0.0000,0.0000,0.0000,0.0000,16396.0000,32792.0000,40990.0000,53696.9000,125880.2900,0,,,,,,4533331270526024204,decode,,,,Active prefill tokens queued per worker
+localhost:8090,gauge,dynamo_frontend_worker_last_input_sequence_tokens,tokens,7187.0348,7187.0000,7191.0000,0.3722,7187.0000,7187.0000,7187.0000,7187.0000,7187.0000,7187.0000,7187.0000,7187.0000,7187.0000,0,,,,,,4533331270526024202,decode,,,,Last observed input sequence tokens per worker
+localhost:8090,gauge,dynamo_frontend_worker_last_input_sequence_tokens,tokens,7187.0348,7187.0000,7191.0000,0.3722,7187.0000,7187.0000,7187.0000,7187.0000,7187.0000,7187.0000,7187.0000,7187.0000,7187.0000,0,,,,,,4533331270526024204,decode,,,,Last observed input sequence tokens per worker
+localhost:8090,gauge,dynamo_frontend_worker_last_inter_token_latency_seconds,seconds,0.1710,0.0047,0.6922,0.1577,0.0066,0.0140,0.0158,0.0181,0.1069,0.3516,0.3573,0.3605,0.3674,0,,,,,,4533331270526024202,decode,,,,Last observed inter-token latency per worker (seconds)
+localhost:8090,gauge,dynamo_frontend_worker_last_inter_token_latency_seconds,seconds,0.1832,0.0025,0.3658,0.1578,0.0038,0.0143,0.0156,0.0185,0.1837,0.3458,0.3528,0.3563,0.3614,0,,,,,,4533331270526024204,decode,,,,Last observed inter-token latency per worker (seconds)
+localhost:8090,gauge,dynamo_frontend_worker_last_time_to_first_token_seconds,seconds,1.3689,0.2386,5.5236,1.2769,0.2486,0.2997,0.5007,0.7126,0.9323,1.3937,2.3003,5.4881,5.5236,0,,,,,,4533331270526024202,decode,,,,Last observed time to first token per worker (seconds)
+localhost:8090,gauge,dynamo_frontend_worker_last_time_to_first_token_seconds,seconds,1.4218,0.2408,5.6800,1.2302,0.2450,0.3248,0.3783,0.8728,1.0645,1.4356,2.0696,5.4833,5.4833,0,,,,,,4533331270526024204,decode,,,,Last observed time to first token per worker (seconds)
+localhost:8090,gauge,dynamo_component_router_worker_registered,,1.0000,1.0000,1.0000,0.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0,backend,dynamo,,,4533331270526024202,3ee9a0c59cdfba06,decode,,,,Whether the router currently has this worker/dp_rank registered (1 = registered)
+localhost:8090,gauge,dynamo_component_router_worker_registered,,1.0000,1.0000,1.0000,0.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0,backend,dynamo,,,4533331270526024204,3ee9a0c59cdfba06,decode,,,,Whether the router currently has this worker/dp_rank registered (1 = registered)
+
+Endpoint,Type,Metric,Unit,total,rate,rate_avg,rate_min,rate_max,rate_std,warning_kind,dynamo_component,dynamo_namespace,endpoint,error_type,event_type,model,policy_class,reason,request_type,router_id,status,worker_id,worker_type,worker,Description
+localhost:8090,counter,dynamo_frontend_detokenize_token_count,count,16973824.0000,224206.3488,,,,,,,,,,,,,,,,,,,,Total tokens detokenized
+localhost:8090,counter,dynamo_frontend_detokenize_total_us,,170143902.0000,2247421.8565,,,,,,,,,,,,,,,,,,,,Cumulative detokenization time (microseconds)
+localhost:8090,counter,dynamo_frontend_event_loop_stall,,1.0000,0.0132,,,,,,,,,,,,,,,,,,,,Number of event loop stalls (delay > 5ms)
+localhost:8090,counter,dynamo_frontend_tokenizer_cache_hits,,0.0000,0.0000,,,,,,,,,,,,,,,,,,,,Cumulative L1 tokenizer prefix-cache hits
+localhost:8090,counter,dynamo_frontend_tokenizer_cache_misses,,0.0000,0.0000,,,,,,,,,,,,,,,,,,,,Cumulative L1 tokenizer prefix-cache misses
+localhost:8090,counter,dynamo_tokio_budget_forced_yield,,640.0000,8.4537,,,,,,,,,,,,,,,,,,,,Number of times tasks were forced to yield after exhausting budget
+localhost:8090,counter,dynamo_transport_tcp_bytes_received,,0.0000,0.0000,,,,,,,,,,,,,,,,,,,,Total bytes received by TCP request client
+localhost:8090,counter,dynamo_transport_tcp_bytes_sent,,20179476.0000,266549.6376,,,,,,,,,,,,,,,,,,,,Total bytes sent by TCP request client
+localhost:8090,counter,dynamo_transport_tcp_errors,errors,0.0000,0.0000,,,,,,,,,,,,,,,,,,,,Total TCP request errors (send failure or timeout)
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,0,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,1,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,10,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,100,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,101,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,102,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,103,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,104,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,105,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,106,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,107,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,108,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,109,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,11,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,110,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,111,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,112,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,113,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,114,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,115,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,116,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,117,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,118,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,119,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,12,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,120,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,121,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,122,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,123,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,124,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,125,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,126,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,127,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,13,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,14,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,15,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,16,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,17,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,18,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,19,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,2,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,20,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,21,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,22,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,23,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,24,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,25,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,26,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,27,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,28,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,29,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,3,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,30,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,31,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,32,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,33,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,34,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,35,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,36,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,37,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,38,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,39,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,4,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,40,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,41,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,42,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,43,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,44,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,45,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,46,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,47,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,48,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,49,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,5,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,50,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,51,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,52,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,53,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,54,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,55,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,56,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,57,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,58,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,59,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,6,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,60,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,61,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,62,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,63,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,64,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,65,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,66,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,67,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,68,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,69,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,7,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,70,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,71,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,72,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,73,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,74,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,75,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,76,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,77,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,78,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,79,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,8,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,80,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,81,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,82,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,83,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,84,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,85,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,86,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,87,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,88,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,89,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,9,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,90,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,91,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,92,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,93,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,94,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,95,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,96,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,97,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,98,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_overflow_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,99,Total number of times worker local queue overflowed
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,33.0000,0.4359,,,,,,,,,,,,,,,,,,,0,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,1,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,10,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,23.0000,0.3038,,,,,,,,,,,,,,,,,,,100,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,17218.0000,227.4317,,,,,,,,,,,,,,,,,,,101,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,1.0000,0.0132,,,,,,,,,,,,,,,,,,,102,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,103,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,17679.0000,233.5210,,,,,,,,,,,,,,,,,,,104,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,13782.0000,182.0457,,,,,,,,,,,,,,,,,,,105,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,2.0000,0.0264,,,,,,,,,,,,,,,,,,,106,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,25.0000,0.3302,,,,,,,,,,,,,,,,,,,107,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,272.0000,3.5928,,,,,,,,,,,,,,,,,,,108,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,357.0000,4.7156,,,,,,,,,,,,,,,,,,,109,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,11,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,5.0000,0.0660,,,,,,,,,,,,,,,,,,,110,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,442.0000,5.8384,,,,,,,,,,,,,,,,,,,111,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,12.0000,0.1585,,,,,,,,,,,,,,,,,,,112,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,4.0000,0.0528,,,,,,,,,,,,,,,,,,,113,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,1.0000,0.0132,,,,,,,,,,,,,,,,,,,114,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,3494.0000,46.1521,,,,,,,,,,,,,,,,,,,115,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,11173.0000,147.5836,,,,,,,,,,,,,,,,,,,116,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,117,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,46.0000,0.6076,,,,,,,,,,,,,,,,,,,118,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,119,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,12,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,11.0000,0.1453,,,,,,,,,,,,,,,,,,,120,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,4.0000,0.0528,,,,,,,,,,,,,,,,,,,121,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,33.0000,0.4359,,,,,,,,,,,,,,,,,,,122,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,6.0000,0.0793,,,,,,,,,,,,,,,,,,,123,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,6.0000,0.0793,,,,,,,,,,,,,,,,,,,124,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,125,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,126,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,31.0000,0.4095,,,,,,,,,,,,,,,,,,,127,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,13,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,14,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,15,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,16,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,17,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,18,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,19,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,2,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,20,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,21,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,22,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,23,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,24,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,25,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,26,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,27,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,28,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,29,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,3,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,30,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,31,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,32,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,33,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,34,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,35,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,36,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,37,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,38,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,39,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,4,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,40,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,41,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,42,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,43,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,44,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,45,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,46,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,47,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,48,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,49,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,5,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,50,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,51,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,52,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,53,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,54,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,55,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,56,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,57,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,58,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,59,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,6,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,60,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,61,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,62,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,63,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,64,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,65,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,66,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,67,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,68,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,69,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,7,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,70,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,10.0000,0.1321,,,,,,,,,,,,,,,,,,,71,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,22.0000,0.2906,,,,,,,,,,,,,,,,,,,72,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,14704.0000,194.2244,,,,,,,,,,,,,,,,,,,73,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,19029.0000,251.3531,,,,,,,,,,,,,,,,,,,74,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,13789.0000,182.1382,,,,,,,,,,,,,,,,,,,75,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,16.0000,0.2113,,,,,,,,,,,,,,,,,,,76,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,17755.0000,234.5249,,,,,,,,,,,,,,,,,,,77,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,4938.0000,65.2258,,,,,,,,,,,,,,,,,,,78,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,7.0000,0.0925,,,,,,,,,,,,,,,,,,,79,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,8,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,12501.0000,165.1251,,,,,,,,,,,,,,,,,,,80,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,5.0000,0.0660,,,,,,,,,,,,,,,,,,,81,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,298.0000,3.9363,,,,,,,,,,,,,,,,,,,82,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,29.0000,0.3831,,,,,,,,,,,,,,,,,,,83,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,16828.0000,222.2802,,,,,,,,,,,,,,,,,,,84,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,224.0000,2.9588,,,,,,,,,,,,,,,,,,,85,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,231.0000,3.0513,,,,,,,,,,,,,,,,,,,86,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,2.0000,0.0264,,,,,,,,,,,,,,,,,,,87,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,17331.0000,228.9243,,,,,,,,,,,,,,,,,,,88,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,89,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,9,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,5.0000,0.0660,,,,,,,,,,,,,,,,,,,90,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,16029.0000,211.7262,,,,,,,,,,,,,,,,,,,91,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,23.0000,0.3038,,,,,,,,,,,,,,,,,,,92,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,12684.0000,167.5423,,,,,,,,,,,,,,,,,,,93,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,58.0000,0.7661,,,,,,,,,,,,,,,,,,,94,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,95,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,6.0000,0.0793,,,,,,,,,,,,,,,,,,,96,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,6.0000,0.0793,,,,,,,,,,,,,,,,,,,97,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,4.0000,0.0528,,,,,,,,,,,,,,,,,,,98,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_park_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,99,Total number of times worker has parked
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,8.0000,0.1057,,,,,,,,,,,,,,,,,,,0,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,1,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,10,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,13.0000,0.1717,,,,,,,,,,,,,,,,,,,100,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,6028.0000,79.6235,,,,,,,,,,,,,,,,,,,101,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,102,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,7.0000,0.0925,,,,,,,,,,,,,,,,,,,103,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,5957.0000,78.6857,,,,,,,,,,,,,,,,,,,104,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,4737.0000,62.5708,,,,,,,,,,,,,,,,,,,105,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,6.0000,0.0793,,,,,,,,,,,,,,,,,,,106,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,9.0000,0.1189,,,,,,,,,,,,,,,,,,,107,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,70.0000,0.9246,,,,,,,,,,,,,,,,,,,108,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,132.0000,1.7436,,,,,,,,,,,,,,,,,,,109,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,11,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,110,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,143.0000,1.8889,,,,,,,,,,,,,,,,,,,111,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,10.0000,0.1321,,,,,,,,,,,,,,,,,,,112,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,2.0000,0.0264,,,,,,,,,,,,,,,,,,,113,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,4.0000,0.0528,,,,,,,,,,,,,,,,,,,114,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,1324.0000,17.4886,,,,,,,,,,,,,,,,,,,115,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,3739.0000,49.3883,,,,,,,,,,,,,,,,,,,116,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,4.0000,0.0528,,,,,,,,,,,,,,,,,,,117,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,9.0000,0.1189,,,,,,,,,,,,,,,,,,,118,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,119,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,12,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,11.0000,0.1453,,,,,,,,,,,,,,,,,,,120,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,121,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,20.0000,0.2642,,,,,,,,,,,,,,,,,,,122,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,10.0000,0.1321,,,,,,,,,,,,,,,,,,,123,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,4.0000,0.0528,,,,,,,,,,,,,,,,,,,124,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,125,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,126,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,12.0000,0.1585,,,,,,,,,,,,,,,,,,,127,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,13,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,14,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,15,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,16,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,17,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,18,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,19,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,2,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,20,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,21,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,22,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,23,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,24,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,25,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,26,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,27,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,28,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,29,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,3,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,30,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,31,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,32,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,33,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,34,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,35,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,36,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,37,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,38,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,39,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,4,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,40,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,41,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,42,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,43,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,44,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,45,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,46,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,47,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,48,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,49,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,5,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,50,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,51,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,52,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,53,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,54,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,55,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,56,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,57,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,58,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,59,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,6,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,60,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,61,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,62,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,63,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,64,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,65,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,66,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,67,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,68,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,69,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,7,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,70,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,71,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,16.0000,0.2113,,,,,,,,,,,,,,,,,,,72,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,5310.0000,70.1395,,,,,,,,,,,,,,,,,,,73,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,6864.0000,90.6662,,,,,,,,,,,,,,,,,,,74,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,5054.0000,66.7580,,,,,,,,,,,,,,,,,,,75,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,5.0000,0.0660,,,,,,,,,,,,,,,,,,,76,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,6532.0000,86.2808,,,,,,,,,,,,,,,,,,,77,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,1767.0000,23.3402,,,,,,,,,,,,,,,,,,,78,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,4.0000,0.0528,,,,,,,,,,,,,,,,,,,79,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,8,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,4369.0000,57.7099,,,,,,,,,,,,,,,,,,,80,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,7.0000,0.0925,,,,,,,,,,,,,,,,,,,81,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,131.0000,1.7304,,,,,,,,,,,,,,,,,,,82,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,17.0000,0.2246,,,,,,,,,,,,,,,,,,,83,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,5798.0000,76.5855,,,,,,,,,,,,,,,,,,,84,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,87.0000,1.1492,,,,,,,,,,,,,,,,,,,85,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,70.0000,0.9246,,,,,,,,,,,,,,,,,,,86,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,5.0000,0.0660,,,,,,,,,,,,,,,,,,,87,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,6246.0000,82.5031,,,,,,,,,,,,,,,,,,,88,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,4.0000,0.0528,,,,,,,,,,,,,,,,,,,89,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,0.0000,0.0000,,,,,,,,,,,,,,,,,,,9,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,90,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,5403.0000,71.3679,,,,,,,,,,,,,,,,,,,91,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,11.0000,0.1453,,,,,,,,,,,,,,,,,,,92,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,4484.0000,59.2289,,,,,,,,,,,,,,,,,,,93,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,19.0000,0.2510,,,,,,,,,,,,,,,,,,,94,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,4.0000,0.0528,,,,,,,,,,,,,,,,,,,95,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,96,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,6.0000,0.0793,,,,,,,,,,,,,,,,,,,97,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,3.0000,0.0396,,,,,,,,,,,,,,,,,,,98,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_tokio_worker_steal_count,count,6.0000,0.0793,,,,,,,,,,,,,,,,,,,99,Total number of tasks stolen by worker
+localhost:8090,counter,dynamo_router_shared_cache_errors,errors,0.0000,0.0000,,,,,,,,,,,,,,,4533331270526024198,,,,,Total shared cache query errors
+localhost:8090,counter,dynamo_frontend_output_tokens,tokens,129916.0000,1716.0536,,,,,,,,,,,swiss-ai/Apertus-v1.5-8B,,,,,,,,,Total number of output tokens generated (updates in real-time)
+localhost:8090,counter,dynamo_frontend_router_queue_backpressure,,0.0000,0.0000,,,,,,,,,,,swiss-ai/Apertus-v1.5-8B,default,cached_token_limit,,,,,decode,,Total number of router scheduler queue backpressure rejections
+localhost:8090,counter,dynamo_frontend_router_queue_backpressure,,0.0000,0.0000,,,,,,,,,,,swiss-ai/Apertus-v1.5-8B,default,raw_isl_token_limit,,,,,decode,,Total number of router scheduler queue backpressure rejections
+localhost:8090,counter,dynamo_frontend_router_queue_backpressure,,0.0000,0.0000,,,,,,,,,,,swiss-ai/Apertus-v1.5-8B,default,request_limit,,,,,decode,,Total number of router scheduler queue backpressure rejections
+localhost:8090,counter,dynamo_frontend_requests_started,,512.0000,6.7630,,,,,,,,chat_completions,,,swiss-ai/Apertus-v1.5-8B,,,stream,,,,,,Total number of LLM requests accepted by the frontend handler
+localhost:8090,counter,dynamo_frontend_requests_started,,0.0000,0.0000,,,,,,,,chat_completions,,,swiss-ai/Apertus-v1.5-8B,,,unary,,,,,,Total number of LLM requests accepted by the frontend handler
+localhost:8090,counter,dynamo_frontend_requests,requests,512.0000,6.7630,,,,,,,,chat_completions,,,swiss-ai/Apertus-v1.5-8B,,,stream,,success,,,,Total number of LLM requests processed
+localhost:8090,counter,dynamo_frontend_requests,requests,0.0000,0.0000,,,,,,,,chat_completions,,,swiss-ai/Apertus-v1.5-8B,,,unary,,success,,,,Total number of LLM requests processed
+localhost:8090,counter,dynamo_component_router_requests,requests,512.0000,6.7630,,,,,,backend,dynamo,,,,,,,,4533331270526024198,,3ee9a0c59cdfba06,,,Total number of requests processed by the router
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,0.0000,0.0000,,,,,,backend,dynamo,,,cleared,,,,,,block_not_found,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,0.0000,0.0000,,,,,,backend,dynamo,,,cleared,,,,,,invalid_block,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,0.0000,0.0000,,,,,,backend,dynamo,,,cleared,,,,,,ok,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,0.0000,0.0000,,,,,,backend,dynamo,,,cleared,,,,,,parent_block_not_found,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,0.0000,0.0000,,,,,,backend,dynamo,,,removed,,,,,,block_not_found,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,0.0000,0.0000,,,,,,backend,dynamo,,,removed,,,,,,invalid_block,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,139248.0000,1839.3195,,,,,,backend,dynamo,,,removed,,,,,,ok,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,0.0000,0.0000,,,,,,backend,dynamo,,,removed,,,,,,parent_block_not_found,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,0.0000,0.0000,,,,,,backend,dynamo,,,stored,,,,,,block_not_found,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,0.0000,0.0000,,,,,,backend,dynamo,,,stored,,,,,,invalid_block,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,8920.0000,117.8238,,,,,,backend,dynamo,,,stored,,,,,,ok,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_events_applied,,0.0000,0.0000,,,,,,backend,dynamo,,,stored,,,,,,parent_block_not_found,3ee9a0c59cdfba06,,,Total number of KV cache events applied to index
+localhost:8090,counter,dynamo_component_kv_cache_event_warnings,,0.0000,0.0000,,,,,duplicate_store,backend,dynamo,,,,,,,,,,3ee9a0c59cdfba06,,,Total number of suspicious KV cache events seen by the router indexer
+
+Endpoint,Type,Metric,Unit,count,count_rate,sum,sum_rate,avg,p1_estimate,p5_estimate,p10_estimate,p25_estimate,p50_estimate,p75_estimate,p90_estimate,p95_estimate,p99_estimate,dynamo_component,dynamo_namespace,router_id,worker_id,model,operation,stage,Description,buckets
+localhost:8090,histogram,dynamo_frontend_event_loop_delay_seconds,seconds,6831,90.2303,7.4433,0.0983,0.0011,0.0000,0.0000,0.0001,0.0006,0.0010,0.0020,0.0029,0.0032,0.0034,,,,,,,,Event loop delay canary: drift from 10ms sleep (seconds),0=0;0.001=1964;0.005=6830;0.01=6830;0.025=6831;0.05=6831;0.1=6831;0.25=6831;0.5=6831;1=6831;+Inf=6831
+localhost:8090,histogram,dynamo_frontend_template_seconds,seconds,512,6.7630,0.1448,0.0019,0.0003,0.0002,0.0002,0.0002,0.0002,0.0003,0.0003,0.0004,0.0004,0.0004,,,,,,,,Template application time in preprocessor (seconds),0.00001=0;0.00005=0;0.0001=0;0.0005=509;0.001=512;0.005=512;0.01=512;0.05=512;+Inf=512
+localhost:8090,histogram,dynamo_frontend_tokenize_seconds,seconds,512,6.7630,15.9022,0.2101,0.0311,0.0231,0.0236,0.0243,0.0262,0.0294,0.0326,0.0345,0.0351,0.0868,,,,,,,,Tokenization time in preprocessor (seconds),0.0001=0;0.0005=0;0.001=0;0.005=0;0.01=2;0.05=489;0.1=512;0.5=512;1=512;+Inf=512
+localhost:8090,histogram,dynamo_request_plane_queue_seconds,seconds,512,6.7630,0.1711,0.0023,0.0003,0.0002,0.0002,0.0002,0.0003,0.0003,0.0004,0.0004,0.0004,0.0007,,,,,,,,Time from generate() entry to send_request() (seconds),0.0001=0;0.0005=503;0.001=509;0.005=512;0.01=512;0.05=512;0.1=512;0.5=512;1=512;+Inf=512
+localhost:8090,histogram,dynamo_request_plane_roundtrip_ttft_seconds,seconds,512,6.7630,692.5786,9.1482,1.3527,0.1973,0.2535,0.5000,0.7377,1.1640,1.6306,1.9499,3.3382,6.3500,,,,,,,,Time from send_request() to first response item (seconds),0.001=0;0.005=0;0.01=0;0.025=0;0.05=0;0.1=0;0.25=23;0.5=50;1=177;2.5=472;5=504;+Inf=512
+localhost:8090,histogram,dynamo_request_plane_send_seconds,seconds,512,6.7630,0.4442,0.0059,0.0009,0.0003,0.0003,0.0003,0.0004,0.0005,0.0006,0.0007,0.0019,0.0072,,,,,,,,Time for send_request() to complete (seconds),0.0001=0;0.0005=198;0.001=473;0.005=504;0.01=507;0.05=512;0.1=512;0.5=512;1=512;+Inf=512
+localhost:8090,histogram,dynamo_frontend_stage_duration_seconds,seconds,512,6.7630,16.0542,0.2121,0.0314,0.0229,0.0234,0.0241,0.0262,0.0297,0.0332,0.0353,0.0360,0.0868,,,,,,,preprocess,Pipeline stage duration (seconds),0.0001=0;0.0005=0;0.001=0;0.005=0;0.01=1;0.05=489;0.1=512;0.5=512;1=512;2.5=512;5=512;+Inf=512
+localhost:8090,histogram,dynamo_frontend_stage_duration_seconds,seconds,512,6.7630,0.0046,0.0001,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,,,,,,,route,Pipeline stage duration (seconds),0.0001=512;0.0005=512;0.001=512;0.005=512;0.01=512;0.05=512;0.1=512;0.5=512;1=512;2.5=512;5=512;+Inf=512
+localhost:8090,histogram,dynamo_frontend_stage_duration_seconds,seconds,512,6.7630,692.7509,9.1505,1.3530,0.1251,0.2779,0.5000,0.7387,1.1656,1.6323,1.9516,3.3419,6.3500,,,,,,,transport_roundtrip,Pipeline stage duration (seconds),0.0001=0;0.0005=0;0.001=0;0.005=0;0.01=0;0.05=0;0.1=0;0.5=50;1=177;2.5=472;5=504;+Inf=512
+localhost:8090,histogram,dynamo_frontend_tokenizer_latency_ms,milliseconds,512,6.7630,5.0621,0.0669,0.0099,0.0099,0.0099,0.0099,0.0099,0.0099,0.0099,0.0099,0.0099,0.0099,,,,,,detokenize,,Tokenizer latency in milliseconds,0.5=512;1=512;2=512;4=512;8=512;16=512;32=512;64=512;128=512;256=512;512=512;+Inf=512
+localhost:8090,histogram,dynamo_frontend_tokenizer_latency_ms,milliseconds,512,6.7630,15564.8546,205.5953,30.4001,21.8477,22.3722,23.0278,24.9946,28.0285,30.5895,44.3301,53.7848,61.4910,,,,,,tokenize,,Tokenizer latency in milliseconds,0.5=0;1=0;2=0;4=0;8=0;16=4;32=421;64=510;128=512;256=512;512=512;+Inf=512
+localhost:8090,histogram,dynamo_frontend_cached_tokens,tokens,512,6.7630,1581056.0000,20884.0856,3088.0000,2249.5400,2321.3994,2411.2236,2680.6962,3129.8173,3578.9384,3600.0000,3600.0000,3600.0000,,,,,swiss-ai/Apertus-v1.5-8B,,,Number of cached tokens (prefix cache hits) per request,0=0;100=0;210=0;430=0;870=0;1800=0;3600=512;7400=512;15000=512;31000=512;63000=512;130000=512;+Inf=512
+localhost:8090,histogram,dynamo_frontend_input_sequence_tokens,tokens,512,6.7630,3679744.0000,48605.5450,7187.0000,5703.1057,5854.8088,6044.4377,6613.3244,7400.0000,7400.0000,7400.0000,7400.0000,7400.0000,,,,,swiss-ai/Apertus-v1.5-8B,,,Input sequence length in tokens,0=0;100=0;210=0;430=0;870=0;1800=0;3600=0;7400=512;15000=512;31000=512;63000=512;130000=512;+Inf=512
+localhost:8090,histogram,dynamo_frontend_inter_token_latency_seconds,seconds,129404,1709.2906,4113.8308,54.3394,0.0318,0.0067,0.0085,0.0108,0.0136,0.0171,0.0206,0.0227,0.1399,0.3446,,,,,swiss-ai/Apertus-v1.5-8B,,,Inter-token latency in seconds,0=0;0.0019=0;0.0035=3;0.0067=54;0.013=17572;0.024=119273;0.045=120998;0.084=122066;0.16=123118;0.3=124501;0.56=129366;1.1=129404;2=129404;+Inf=129404
+localhost:8090,histogram,dynamo_frontend_output_sequence_tokens,tokens,512,6.7630,131072.0000,1731.3232,256.0000,210.0000,210.0000,210.0000,210.0000,246.6909,301.5835,334.5190,345.4976,354.2804,,,,,swiss-ai/Apertus-v1.5-8B,,,Output sequence length in tokens,0=0;100=0;210=0;430=512;880=512;1800=512;3700=512;7600=512;16000=512;32000=512;+Inf=512
+localhost:8090,histogram,dynamo_frontend_request_duration_seconds,seconds,512,6.7630,4824.7833,63.7303,9.4234,4.4122,6.6834,8.0000,8.3108,9.2310,10.7740,11.7610,12.0901,12.3533,,,,,swiss-ai/Apertus-v1.5-8B,,,Duration of LLM requests,0=0;2=0;4=0;8=36;16=512;32=512;64=512;130=512;260=512;510=512;+Inf=512
+localhost:8090,histogram,dynamo_frontend_time_to_first_token_seconds,seconds,512,6.7630,709.1588,9.3672,1.3851,0.2340,0.3242,0.4855,0.8082,1.2355,1.6809,1.9747,3.5041,5.1946,,,,,swiss-ai/Apertus-v1.5-8B,,,Time to first token in seconds,0=0;0.0022=0;0.0047=0;0.01=0;0.022=0;0.047=0;0.1=0;0.22=0;0.47=44;1=170;2.2=468;4.7=500;10=512;22=512;48=512;100=512;220=512;480=512;+Inf=512
+localhost:8090,histogram,dynamo_router_overhead_block_hashing_ms,milliseconds,512,6.7630,9.2330,0.1220,0.0180,0.0083,0.0111,0.0147,0.0167,0.0180,0.0201,0.0215,0.0220,0.0224,,,4533331270526024198,,,,,Time spent computing block hashes in milliseconds,0.001=0;0.002=0;0.004=0;0.008=3;0.016=61;0.032=510;0.064=512;0.128=512;0.256=512;0.512=512;1.024=512;2.048=512;4.096=512;8.192=512;16.384=512;+Inf=512
+localhost:8090,histogram,dynamo_router_overhead_indexer_find_matches_ms,milliseconds,512,6.7630,7.8974,0.1043,0.0154,0.0062,0.0102,0.0108,0.0125,0.0154,0.0183,0.0201,0.0207,0.0212,,,4533331270526024198,,,,,Time spent in indexer find_matches in milliseconds,0.01=9;0.03=511;0.09=512;0.27=512;0.81=512;2.43=512;7.290000000000001=512;21.870000000000005=512;65.61000000000001=512;196.83000000000004=512;590.4900000000001=512;1771.4700000000003=512;5314.410000000001=512;15943.230000000003=512;47829.69000000001=512;143489.07000000004=512;430467.2100000001=512;+Inf=512
+localhost:8090,histogram,dynamo_router_overhead_scheduling_ms,milliseconds,512,6.7630,144.4561,1.9081,0.2821,0.2078,0.2120,0.2172,0.2328,0.2541,0.3121,0.4074,0.4463,0.4775,,,4533331270526024198,,,,,Time spent in scheduler worker selection in milliseconds,0.01=0;0.03=0;0.09=0;0.27=308;0.81=512;2.43=512;7.290000000000001=512;21.870000000000005=512;65.61000000000001=512;196.83000000000004=512;590.4900000000001=512;1771.4700000000003=512;5314.410000000001=512;15943.230000000003=512;47829.69000000001=512;143489.07000000004=512;430467.2100000001=512;+Inf=512
+localhost:8090,histogram,dynamo_router_overhead_seq_hashing_ms,milliseconds,512,6.7630,7.7011,0.1017,0.0150,0.0049,0.0111,0.0140,0.0147,0.0156,0.0161,0.0166,0.0168,0.0169,,,4533331270526024198,,,,,Time spent computing sequence hashes in milliseconds,0.001=0;0.002=0;0.004=0;0.008=26;0.016=382;0.032=512;0.064=512;0.128=512;0.256=512;0.512=512;1.024=512;2.048=512;4.096=512;8.192=512;16.384=512;+Inf=512
+localhost:8090,histogram,dynamo_router_overhead_shared_cache_query_ms,milliseconds,0,,,,,,,,,,,,,,,,4533331270526024198,,,,,Time spent querying the shared KV cache in milliseconds,0.01=0;0.03=0;0.09=0;0.27=0;0.81=0;2.43=0;7.290000000000001=0;21.870000000000005=0;65.61000000000001=0;196.83000000000004=0;590.4900000000001=0;1771.4700000000003=0;5314.410000000001=0;15943.230000000003=0;47829.69000000001=0;143489.07000000004=0;430467.2100000001=0;+Inf=0
+localhost:8090,histogram,dynamo_router_overhead_total_ms,milliseconds,512,6.7630,174.1415,2.3002,0.3401,0.1302,0.2664,0.2819,0.3026,0.3370,0.3822,0.4101,0.4194,0.4268,,,4533331270526024198,,,,,Total routing overhead per request in milliseconds,0.01=0;0.03=0;0.09=0;0.27=27;0.81=511;2.43=512;7.290000000000001=512;21.870000000000005=512;65.61000000000001=512;196.83000000000004=512;590.4900000000001=512;1771.4700000000003=512;5314.410000000001=512;15943.230000000003=512;47829.69000000001=512;143489.07000000004=512;430467.2100000001=512;+Inf=512
+localhost:8090,histogram,dynamo_component_router_input_sequence_tokens,tokens,512,6.7630,3679744.0000,48605.5450,7187.0000,5703.1057,5854.8088,6044.4377,6613.3244,7400.0000,7400.0000,7400.0000,7400.0000,7400.0000,backend,dynamo,4533331270526024198,3ee9a0c59cdfba06,,,,Input sequence length in tokens observed at the router,0=0;100=0;210=0;430=0;870=0;1800=0;3600=0;7400=512;15000=512;31000=512;63000=512;130000=512;+Inf=512
+localhost:8090,histogram,dynamo_component_router_inter_token_latency_seconds,seconds,0,,,,,,,,,,,,,,backend,dynamo,4533331270526024198,3ee9a0c59cdfba06,,,,Average inter-token latency observed at the router,0=0;0.0019=0;0.0035=0;0.0067=0;0.013=0;0.024=0;0.045=0;0.084=0;0.16=0;0.3=0;0.56=0;1.1=0;2=0;+Inf=0
+localhost:8090,histogram,dynamo_component_router_kv_hit_rate,ratio,512,6.7630,219.5911,2.9006,0.4289,0.4044,0.4064,0.4089,0.4164,0.4289,0.4414,0.4488,0.4500,0.4500,backend,dynamo,4533331270526024198,3ee9a0c59cdfba06,,,,Predicted KV cache hit rate at routing time (0.0-1.0),0=0;0.05=0;0.1=0;0.15000000000000002=0;0.2=0;0.25=0;0.30000000000000004=0;0.35000000000000003=0;0.4=0;0.45=512;0.5=512;0.55=512;0.6000000000000001=512;0.65=512;0.7000000000000001=512;0.75=512;0.8=512;0.8500000000000001=512;0.9=512;0.9500000000000001=512;1=512;+Inf=512
+localhost:8090,histogram,dynamo_component_router_kv_transfer_estimated_latency_seconds,seconds,0,,,,,,,,,,,,,,backend,dynamo,4533331270526024198,3ee9a0c59cdfba06,,,,Upper-bound estimation of KV cache transfer latency in disaggregated serving (prefill_complete to first_token),0=0;0.0019=0;0.0037=0;0.0072=0;0.014=0;0.027=0;0.052=0;0.1=0;0.19=0;0.37=0;0.72=0;1.4=0;2.7=0;5.2=0;10=0;+Inf=0
+localhost:8090,histogram,dynamo_component_router_output_sequence_tokens,tokens,512,6.7630,131072.0000,1731.3232,256.0000,210.0000,210.0000,210.0000,210.0000,246.6909,301.5835,334.5190,345.4976,354.2804,backend,dynamo,4533331270526024198,3ee9a0c59cdfba06,,,,Output sequence length in tokens observed at the router,0=0;100=0;210=0;430=512;880=512;1800=512;3700=512;7600=512;16000=512;32000=512;+Inf=512
+localhost:8090,histogram,dynamo_component_router_shared_cache_beyond_blocks,blocks,0,,,,,,,,,,,,,,backend,dynamo,4533331270526024198,3ee9a0c59cdfba06,,,,Shared cache blocks beyond device overlap for the selected worker,1=0;2=0;4=0;8=0;16=0;32=0;64=0;128=0;256=0;512=0;1024=0;2048=0;+Inf=0
+localhost:8090,histogram,dynamo_component_router_shared_cache_hit_rate,ratio,0,,,,,,,,,,,,,,backend,dynamo,4533331270526024198,3ee9a0c59cdfba06,,,,Fraction of request blocks found in the shared KV cache (0.0-1.0),0=0;0.05=0;0.1=0;0.15000000000000002=0;0.2=0;0.25=0;0.30000000000000004=0;0.35000000000000003=0;0.4=0;0.45=0;0.5=0;0.55=0;0.6000000000000001=0;0.65=0;0.7000000000000001=0;0.75=0;0.8=0;0.8500000000000001=0;0.9=0;0.9500000000000001=0;1=0;+Inf=0
+localhost:8090,histogram,dynamo_component_router_time_to_first_token_seconds,seconds,512,6.7630,709.1190,9.3667,1.3850,0.2342,0.3243,0.4859,0.8086,1.2355,1.6796,1.9727,3.5061,5.1977,backend,dynamo,4533331270526024198,3ee9a0c59cdfba06,,,,Time to first token observed at the router,0=0;0.0022=0;0.0047=0;0.01=0;0.022=0;0.047=0;0.1=0;0.22=0;0.47=44;1=170;2.2=468;4.7=500;10=512;22=512;48=512;100=512;220=512;480=512;+Inf=512

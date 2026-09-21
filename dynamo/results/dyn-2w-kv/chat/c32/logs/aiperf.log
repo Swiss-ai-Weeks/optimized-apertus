@@ -1,0 +1,224 @@
+2026-09-21 20:26:43.453 - aiperf.cli_runner._single_run - INFO - Starting AIPerf System
+2026-09-21 20:26:43.480 - aiperf.config.resolution.resolvers - INFO - [OK] Tokenizer swiss-ai/Apertus-v1.5-8B detected
+2026-09-21 20:26:43.480 - aiperf.config.resolution.resolvers - INFO - 1 tokenizer validated | 0.0s
+2026-09-21 20:26:43.481 - aiperf.config.resolution.resolvers - INFO - HF cache hit (skipping prefetch): ['swiss-ai/Apertus-v1.5-8B']
+2026-09-21 20:26:43.982 - server_metrics_manager - INFO - Server Metrics: Discovered 1 endpoints: ['http://localhost:8090/metrics']
+2026-09-21 20:26:44.000 - GPUTelemetryJSONLWriter_86bc7007 - INFO - GPU telemetry export enabled: /results/dyn-2w-kv/chat/c32/gpu_telemetry_export.jsonl
+2026-09-21 20:26:44.008 - OTelMetricsResultsProcessor_558842ef - INFO - Telemetry streaming is disabled (set --otel-url and/or --mlflow-tracking-uri to enable)
+2026-09-21 20:26:44.009 - RecordExportJSONLWriter_aa20752e - INFO - Record metrics export enabled: /results/dyn-2w-kv/chat/c32/profile_export.jsonl
+2026-09-21 20:26:44.048 - system_controller - INFO - Registered Worker Manager (id: 'worker_manager')
+2026-09-21 20:26:44.242 - system_controller - INFO - Registered Gpu Telemetry Manager (id: 'gpu_telemetry_manager')
+2026-09-21 20:26:44.243 - system_controller - INFO - Registered Dataset Manager (id: 'dataset_manager')
+2026-09-21 20:26:44.243 - system_controller - INFO - Registered Server Metrics Manager (id: 'server_metrics_manager')
+2026-09-21 20:26:44.243 - system_controller - INFO - Registered Records Manager (id: 'records_manager')
+2026-09-21 20:26:44.248 - system_controller - INFO - Registered Timing Manager (id: 'timing_manager')
+2026-09-21 20:26:44.263 - system_controller - INFO - Registered Record Processor (id: 'record_processor_1d2d19ea')
+2026-09-21 20:26:44.266 - system_controller - INFO - Registered Record Processor (id: 'record_processor_3e60d1a7')
+2026-09-21 20:26:44.328 - system_controller - INFO - Registered Record Processor (id: 'record_processor_75cae51c')
+2026-09-21 20:26:44.343 - system_controller - INFO - Registered Record Processor (id: 'record_processor_da2e1542')
+2026-09-21 20:26:44.346 - system_controller - INFO - Registered Record Processor (id: 'record_processor_aa03ed4b')
+2026-09-21 20:26:44.349 - system_controller - INFO - Registered Record Processor (id: 'record_processor_b85330f0')
+2026-09-21 20:26:44.354 - system_controller - INFO - Registered Record Processor (id: 'record_processor_db503929')
+2026-09-21 20:26:44.361 - system_controller - INFO - Registered Record Processor (id: 'record_processor_9b8479cf')
+2026-09-21 20:26:44.424 - system_controller - INFO - Registered Worker (id: 'worker_9a26505a')
+2026-09-21 20:26:44.424 - system_controller - INFO - Registered Worker (id: 'worker_f275b992')
+2026-09-21 20:26:44.436 - system_controller - INFO - Registered Worker (id: 'worker_421ef629')
+2026-09-21 20:26:44.437 - system_controller - INFO - Registered Worker (id: 'worker_b9e4c8aa')
+2026-09-21 20:26:44.437 - system_controller - INFO - AIPerf System is CONFIGURING
+2026-09-21 20:26:44.437 - system_controller - INFO - Configuring all services to start profiling
+2026-09-21 20:26:44.439 - InferenceResultParser_3a88d54f - INFO - Configuring tokenizers for inference result parser (resolve_alias: True)
+2026-09-21 20:26:44.439 - timing_manager - INFO - Waiting for dataset to be configured before configuring timing
+2026-09-21 20:26:44.439 - InferenceResultParser_97dc158c - INFO - Configuring tokenizers for inference result parser (resolve_alias: True)
+2026-09-21 20:26:44.439 - InferenceResultParser_a7131173 - INFO - Configuring tokenizers for inference result parser (resolve_alias: True)
+2026-09-21 20:26:44.439 - InferenceResultParser_a3b6210f - INFO - Configuring tokenizers for inference result parser (resolve_alias: True)
+2026-09-21 20:26:44.439 - InferenceResultParser_4b57e8e6 - INFO - Configuring tokenizers for inference result parser (resolve_alias: True)
+2026-09-21 20:26:44.439 - InferenceResultParser_e902c1df - INFO - Configuring tokenizers for inference result parser (resolve_alias: True)
+2026-09-21 20:26:44.439 - InferenceResultParser_41fb271b - INFO - Configuring tokenizers for inference result parser (resolve_alias: True)
+2026-09-21 20:26:44.439 - InferenceResultParser_9ebe886f - INFO - Configuring tokenizers for inference result parser (resolve_alias: True)
+2026-09-21 20:26:44.440 - dataset_manager - INFO - Configuring tokenizer(s) for dataset manager
+2026-09-21 20:26:44.450 - server_metrics_manager - INFO - Server Metrics: Capturing baseline metrics...
+2026-09-21 20:26:44.451 - system_controller - INFO - Registered Worker (id: 'worker_2551d51e')
+2026-09-21 20:26:44.452 - system_controller - INFO - Registered Worker (id: 'worker_66ae2c66')
+2026-09-21 20:26:44.453 - system_controller - INFO - Registered Worker (id: 'worker_e79c3fd0')
+2026-09-21 20:26:44.453 - system_controller - INFO - Registered Worker (id: 'worker_778e7044')
+2026-09-21 20:26:44.453 - system_controller - INFO - Registered Worker (id: 'worker_7bee2857')
+2026-09-21 20:26:44.454 - system_controller - INFO - Registered Worker (id: 'worker_883fe8c0')
+2026-09-21 20:26:44.461 - system_controller - INFO - Registered Worker (id: 'worker_6926571d')
+2026-09-21 20:26:44.462 - system_controller - INFO - Registered Worker (id: 'worker_211a002c')
+2026-09-21 20:26:44.465 - system_controller - INFO - Registered Worker (id: 'worker_54ee4a76')
+2026-09-21 20:26:44.469 - system_controller - INFO - Registered Worker (id: 'worker_6fee04b5')
+2026-09-21 20:26:44.469 - system_controller - INFO - Registered Worker (id: 'worker_120c39fa')
+2026-09-21 20:26:44.477 - system_controller - INFO - Registered Worker (id: 'worker_4673df60')
+2026-09-21 20:26:44.479 - system_controller - INFO - Registered Worker (id: 'worker_f7303f52')
+2026-09-21 20:26:44.482 - system_controller - INFO - Registered Worker (id: 'worker_e5daede7')
+2026-09-21 20:26:44.484 - gpu_telemetry_manager - WARNING - GPU Telemetry: http://localhost:9400/metrics is not reachable
+2026-09-21 20:26:44.486 - gpu_telemetry_manager - WARNING - GPU Telemetry: http://localhost:9401/metrics is not reachable
+2026-09-21 20:26:44.488 - system_controller - INFO - DCGM telemetry skipped: no telemetry sources reachable
+2026-09-21 20:26:44.488 - system_controller - INFO - Waiting for result domains: profile, server_metrics
+2026-09-21 20:26:44.489 - system_controller - INFO - Registered Worker (id: 'worker_7f459aa8')
+2026-09-21 20:26:44.489 - system_controller - INFO - Registered Worker (id: 'worker_9d3159ed')
+2026-09-21 20:26:44.490 - system_controller - INFO - Registered Worker (id: 'worker_5f4b4073')
+2026-09-21 20:26:44.492 - system_controller - INFO - Registered Worker (id: 'worker_572d014c')
+2026-09-21 20:26:44.510 - system_controller - INFO - Registered Worker (id: 'worker_cc80007a')
+2026-09-21 20:26:44.513 - system_controller - INFO - Registered Worker (id: 'worker_727dc7a4')
+2026-09-21 20:26:44.514 - system_controller - INFO - Registered Worker (id: 'worker_b2c4374d')
+2026-09-21 20:26:44.515 - system_controller - INFO - Registered Worker (id: 'worker_1a602684')
+2026-09-21 20:26:44.515 - system_controller - INFO - Registered Worker (id: 'worker_f82fad30')
+2026-09-21 20:26:44.515 - system_controller - INFO - Registered Worker (id: 'worker_23bf1f56')
+2026-09-21 20:26:44.521 - system_controller - INFO - Registered Worker (id: 'worker_c23a4b6b')
+2026-09-21 20:26:44.521 - system_controller - INFO - Registered Worker (id: 'worker_159e932c')
+2026-09-21 20:26:44.525 - system_controller - INFO - Registered Worker (id: 'worker_ed7fa0b1')
+2026-09-21 20:26:44.526 - system_controller - INFO - Registered Worker (id: 'worker_65d60eb6')
+2026-09-21 20:26:44.568 - system_controller - INFO - Server metrics enabled - 1/1 endpoint(s) reachable.
+2026-09-21 20:26:45.440 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.528 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.616 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.702 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-09-21 20:26:45.787 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.864 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.892 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.900 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.912 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.914 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.914 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.914 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.921 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.950 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.979 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:45.991 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.004 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.005 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.005 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.006 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.010 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.038 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.068 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.076 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.094 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.097 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.100 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.105 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.113 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/swiss-ai/Apertus-v1.5-8B/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.126 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-09-21 20:26:46.157 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-09-21 20:26:46.166 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-09-21 20:26:46.187 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-09-21 20:26:46.191 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-09-21 20:26:46.194 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-09-21 20:26:46.202 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-09-21 20:26:46.204 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-09-21 20:26:46.215 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.249 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.253 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.280 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.285 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.289 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.298 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-09-21 20:26:46.301 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-09-21 20:26:51.207 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B "HTTP/1.1 200 OK"
+2026-09-21 20:26:51.321 - InferenceResultParser_3a88d54f - INFO - Initialized tokenizers: {'swiss-ai/Apertus-v1.5-8B': {'class': 'TokenizersBackend', 'name_or_path': 'swiss-ai/Apertus-v1.5-8B'}} in 6.88 seconds
+2026-09-21 20:26:52.720 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B "HTTP/1.1 200 OK"
+2026-09-21 20:26:52.760 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B "HTTP/1.1 200 OK"
+2026-09-21 20:26:52.771 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B "HTTP/1.1 200 OK"
+2026-09-21 20:26:52.773 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B "HTTP/1.1 200 OK"
+2026-09-21 20:26:52.781 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B "HTTP/1.1 200 OK"
+2026-09-21 20:26:52.810 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B "HTTP/1.1 200 OK"
+2026-09-21 20:26:52.829 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B "HTTP/1.1 200 OK"
+2026-09-21 20:26:52.835 - InferenceResultParser_4b57e8e6 - INFO - Initialized tokenizers: {'swiss-ai/Apertus-v1.5-8B': {'class': 'TokenizersBackend', 'name_or_path': 'swiss-ai/Apertus-v1.5-8B'}} in 8.40 seconds
+2026-09-21 20:26:52.879 - InferenceResultParser_a3b6210f - INFO - Initialized tokenizers: {'swiss-ai/Apertus-v1.5-8B': {'class': 'TokenizersBackend', 'name_or_path': 'swiss-ai/Apertus-v1.5-8B'}} in 8.44 seconds
+2026-09-21 20:26:52.890 - InferenceResultParser_41fb271b - INFO - Initialized tokenizers: {'swiss-ai/Apertus-v1.5-8B': {'class': 'TokenizersBackend', 'name_or_path': 'swiss-ai/Apertus-v1.5-8B'}} in 8.45 seconds
+2026-09-21 20:26:52.892 - InferenceResultParser_97dc158c - INFO - Initialized tokenizers: {'swiss-ai/Apertus-v1.5-8B': {'class': 'TokenizersBackend', 'name_or_path': 'swiss-ai/Apertus-v1.5-8B'}} in 8.45 seconds
+2026-09-21 20:26:52.898 - InferenceResultParser_e902c1df - INFO - Initialized tokenizers: {'swiss-ai/Apertus-v1.5-8B': {'class': 'TokenizersBackend', 'name_or_path': 'swiss-ai/Apertus-v1.5-8B'}} in 8.46 seconds
+2026-09-21 20:26:52.927 - InferenceResultParser_a7131173 - INFO - Initialized tokenizers: {'swiss-ai/Apertus-v1.5-8B': {'class': 'TokenizersBackend', 'name_or_path': 'swiss-ai/Apertus-v1.5-8B'}} in 8.49 seconds
+2026-09-21 20:26:52.944 - InferenceResultParser_9ebe886f - INFO - Initialized tokenizers: {'swiss-ai/Apertus-v1.5-8B': {'class': 'TokenizersBackend', 'name_or_path': 'swiss-ai/Apertus-v1.5-8B'}} in 8.50 seconds
+2026-09-21 20:26:52.987 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/swiss-ai/Apertus-v1.5-8B "HTTP/1.1 200 OK"
+2026-09-21 20:26:53.120 - dataset_manager - INFO - Tokenizer(s) configured in 8.68 seconds
+2026-09-21 20:26:53.120 - dataset_manager - INFO - Configuring dataset for dataset_manager
+2026-09-21 20:26:53.665 - MemoryMapDatasetBackingStore_c4f5b793 - INFO - Memory-mapped backing store initialized (streaming to /tmp/aiperf_mmap_186f85970547/dataset.dat)
+2026-09-21 20:26:53.726 - MemoryMapDatasetBackingStore_c4f5b793 - INFO - Data file finalized: 256 conversations, 0.73 MB
+2026-09-21 20:26:53.728 - MemoryMapDatasetBackingStore_c4f5b793 - INFO - Index file created: /tmp/aiperf_mmap_186f85970547/index.dat
+2026-09-21 20:26:53.728 - dataset_manager - INFO - Backing store finalized: client_type=DatasetClientStoreType.MEMORY_MAP format=MemoryMapFormat.CONVERSATION data_file_path=PosixPath('/tmp/aiperf_mmap_186f85970547/dataset.dat') index_file_path=PosixPath('/tmp/aiperf_mmap_186f85970547/index.dat') conversation_count=256 total_size_bytes=765715 compressed=False compressed_data_file_path=None compressed_index_file_path=None compressed_size_bytes=0
+2026-09-21 20:26:53.739 - dataset_manager - INFO - sampling strategy: sequential, unique conversations: 256, unique turn count: 256
+2026-09-21 20:26:53.741 - dataset_manager - INFO - Generating inputs.json file at /results/dyn-2w-kv/chat/c32/inputs.json
+2026-09-21 20:26:53.753 - PhaseOrchestrator_ce21e384 - INFO - Initialized 2 phase(s): ['Warmup', 'Profiling']
+2026-09-21 20:26:53.754 - system_controller - WARNING - Received command response for service we were not expecting: worker_5f4b4073. Ignoring.
+2026-09-21 20:26:53.754 - system_controller - WARNING - Received command response for service we were not expecting: worker_2551d51e. Ignoring.
+2026-09-21 20:26:53.754 - system_controller - WARNING - Received command response for service we were not expecting: worker_883fe8c0. Ignoring.
+2026-09-21 20:26:53.755 - system_controller - WARNING - Received command response for service we were not expecting: worker_211a002c. Ignoring.
+2026-09-21 20:26:53.755 - system_controller - WARNING - Received command response for service we were not expecting: worker_f82fad30. Ignoring.
+2026-09-21 20:26:53.755 - system_controller - WARNING - Received command response for service we were not expecting: worker_9d3159ed. Ignoring.
+2026-09-21 20:26:53.755 - system_controller - WARNING - Received command response for service we were not expecting: worker_6926571d. Ignoring.
+2026-09-21 20:26:53.756 - system_controller - WARNING - Received command response for service we were not expecting: worker_6fee04b5. Ignoring.
+2026-09-21 20:26:53.756 - system_controller - WARNING - Received command response for service we were not expecting: worker_66ae2c66. Ignoring.
+2026-09-21 20:26:53.756 - system_controller - WARNING - Received command response for service we were not expecting: worker_c23a4b6b. Ignoring.
+2026-09-21 20:26:53.756 - system_controller - WARNING - Received command response for service we were not expecting: worker_4673df60. Ignoring.
+2026-09-21 20:26:53.756 - system_controller - WARNING - Received command response for service we were not expecting: worker_54ee4a76. Ignoring.
+2026-09-21 20:26:53.756 - system_controller - WARNING - Received command response for service we were not expecting: worker_23bf1f56. Ignoring.
+2026-09-21 20:26:53.756 - system_controller - WARNING - Received command response for service we were not expecting: worker_b2c4374d. Ignoring.
+2026-09-21 20:26:53.757 - system_controller - WARNING - Received command response for service we were not expecting: worker_e5daede7. Ignoring.
+2026-09-21 20:26:53.757 - system_controller - WARNING - Received command response for service we were not expecting: worker_7f459aa8. Ignoring.
+2026-09-21 20:26:53.757 - system_controller - WARNING - Received command response for service we were not expecting: worker_159e932c. Ignoring.
+2026-09-21 20:26:53.757 - system_controller - WARNING - Received command response for service we were not expecting: worker_ed7fa0b1. Ignoring.
+2026-09-21 20:26:53.757 - system_controller - WARNING - Received command response for service we were not expecting: worker_727dc7a4. Ignoring.
+2026-09-21 20:26:53.758 - system_controller - WARNING - Received command response for service we were not expecting: worker_7bee2857. Ignoring.
+2026-09-21 20:26:53.758 - system_controller - WARNING - Received command response for service we were not expecting: worker_f7303f52. Ignoring.
+2026-09-21 20:26:53.759 - system_controller - WARNING - Received command response for service we were not expecting: worker_778e7044. Ignoring.
+2026-09-21 20:26:53.759 - system_controller - WARNING - Received command response for service we were not expecting: worker_e79c3fd0. Ignoring.
+2026-09-21 20:26:53.759 - system_controller - WARNING - Received command response for service we were not expecting: worker_65d60eb6. Ignoring.
+2026-09-21 20:26:53.760 - system_controller - WARNING - Received command response for service we were not expecting: worker_1a602684. Ignoring.
+2026-09-21 20:26:53.760 - system_controller - WARNING - Received command response for service we were not expecting: worker_120c39fa. Ignoring.
+2026-09-21 20:26:53.760 - system_controller - WARNING - Received command response for service we were not expecting: worker_cc80007a. Ignoring.
+2026-09-21 20:26:53.763 - dataset_manager - INFO - inputs.json file generated in 0.02 seconds
+2026-09-21 20:26:53.765 - system_controller - WARNING - Received command response for service we were not expecting: worker_572d014c. Ignoring.
+2026-09-21 20:26:53.945 - dataset_manager - INFO - Dataset client initialized and freed 256 conversations from memory
+2026-09-21 20:26:53.946 - dataset_manager - INFO - Dataset configured in 0.83 seconds
+2026-09-21 20:26:53.947 - system_controller - INFO - All services configured in 9.51 seconds
+2026-09-21 20:26:53.948 - system_controller - INFO - AIPerf System is CONFIGURED
+2026-09-21 20:26:53.950 - server_metrics_manager - INFO - Server Metrics: Started 1 collector(s) successfully
+2026-09-21 20:26:53.955 - system_controller - INFO - All services started profiling successfully
+2026-09-21 20:26:53.955 - system_controller - INFO - AIPerf System is PROFILING
+2026-09-21 20:26:53.957 - RateTiming - INFO - Creating interval generator: pattern=concurrency_burst, rate=None, smoothness=None
+2026-09-21 20:26:53.958 - PhaseRunner - NOTICE - Phase warmup (warmup) started | phase_index=0 | target: 32 requests
+2026-09-21 20:26:53.960 - records_manager - INFO - Credit phase start: warmup
+2026-09-21 20:26:53.964 - PhaseRunner - NOTICE - Phase warmup (warmup) sending complete | sent=32, completed=0, in_flight=32 | sessions: sent=32, completed=0
+2026-09-21 20:26:55.887 - aiperf.metrics.types.osl_mismatch_metrics - WARNING - OSL mismatch: got 160 tokens (requested 256, diff -37.5%)
+2026-09-21 20:26:55.903 - PhaseRunner - NOTICE - Phase warmup (warmup) complete | completed=32, cancelled=0, errors=0 | sessions: completed=32, cancelled=0 | elapsed=1.94s
+2026-09-21 20:26:55.904 - RateTiming - INFO - Creating interval generator: pattern=concurrency_burst, rate=None, smoothness=None
+2026-09-21 20:26:55.904 - PhaseRunner - NOTICE - Phase profiling (profiling) started | phase_index=1 | profiling_index=0 | target: 256 requests
+2026-09-21 20:26:55.904 - server_metrics_manager - INFO - Server Metrics: Warmup complete, capturing final warmup metrics...
+2026-09-21 20:26:55.905 - records_manager - INFO - Credit phase start: profiling
+2026-09-21 20:26:57.788 - aiperf.metrics.types.osl_mismatch_metrics - WARNING - OSL mismatch: got 239 tokens (requested 256, diff -6.6%)
+2026-09-21 20:26:59.532 - aiperf.metrics.types.osl_mismatch_metrics - WARNING - OSL mismatch: got 236 tokens (requested 256, diff -7.8%)
+2026-09-21 20:27:03.482 - aiperf.metrics.types.osl_mismatch_metrics - WARNING - OSL mismatch: got 226 tokens (requested 256, diff -11.7%)
+2026-09-21 20:27:03.484 - aiperf.metrics.types.osl_mismatch_metrics - WARNING - OSL mismatch: got 221 tokens (requested 256, diff -13.7%)
+2026-09-21 20:27:03.633 - aiperf.metrics.types.osl_mismatch_metrics - WARNING - OSL mismatch: got 215 tokens (requested 256, diff -16.0%)
+2026-09-21 20:27:05.509 - aiperf.metrics.types.osl_mismatch_metrics - WARNING - OSL mismatch: got 239 tokens (requested 256, diff -6.6%)
+2026-09-21 20:27:09.736 - PhaseRunner - NOTICE - Phase profiling (profiling) sending complete | sent=256, completed=224, in_flight=32 | sessions: sent=256, completed=224
+2026-09-21 20:27:09.738 - records_manager - INFO - Sent 256 requests. Waiting for all to complete...
+2026-09-21 20:27:11.484 - aiperf.metrics.types.osl_mismatch_metrics - WARNING - OSL mismatch: got 242 tokens (requested 256, diff -5.5%)
+2026-09-21 20:27:11.485 - aiperf.metrics.types.osl_mismatch_metrics - WARNING - OSL mismatch: got 232 tokens (requested 256, diff -9.4%)
+2026-09-21 20:27:11.537 - PhaseRunner - NOTICE - Phase profiling (profiling) complete | completed=256, cancelled=0, errors=0 | sessions: completed=256, cancelled=0 | elapsed=15.63s
+2026-09-21 20:27:11.538 - PhaseOrchestrator_ce21e384 - NOTICE - All credits completed
+2026-09-21 20:27:11.540 - records_manager - INFO - Received CREDIT_PHASE_COMPLETE message, Phase complete: PhaseRecordsStats(phase=CreditPhase.PROFILING, phase_index=1, profiling_index=0, phase_name='profiling', phase_kind='profiling', start_ns=1790022415904395380, sent_end_ns=1790022429736446058, requests_end_ns=1790022431536696006, baseline_start_ns=1790022415904377145, baseline_end_ns=1790022431536735500, total_expected_requests=256, expected_duration_sec=None, expected_num_sessions=None, expected_grace_period_sec=None, final_requests_sent=None, final_requests_completed=256, final_requests_cancelled=0, final_request_errors=0, final_sent_sessions=None, final_completed_sessions=None, final_cancelled_sessions=None, timeout_triggered=False, grace_period_timeout_triggered=False, was_cancelled=False, records_end_ns=None, success_records=255, error_records=0)
+2026-09-21 20:27:11.540 - records_manager - NOTICE - All requests have completed, please wait for the results to be processed (currently 255 of 256 records processed)...
+2026-09-21 20:27:11.540 - system_controller - INFO - Received credits complete from 'timing_manager'
+2026-09-21 20:27:11.540 - records_manager - INFO - All credits complete, please wait for the results to be processed...
+2026-09-21 20:27:11.575 - records_manager - INFO - Processed 256 valid requests and 0 errors (256 total).
+2026-09-21 20:27:11.575 - records_manager - INFO - Received all records, processing now...
+2026-09-21 20:27:11.580 - records_manager - INFO - Waiting 2.0s for server metrics flush period...
+2026-09-21 20:27:11.594 - server_metrics_manager - INFO - Server Metrics: Profiling complete, capturing final metrics...
+2026-09-21 20:27:13.537 - records_manager - INFO - Processing records results...
+2026-09-21 20:27:13.711 - aiperf.server_metrics.export_stats - WARNING - Detected 1 counter reset(s) in counter metric. This typically indicates server restart(s) during profiling. Statistics may be inaccurate. Raw delta: 8485273.00
+2026-09-21 20:27:13.712 - aiperf.server_metrics.export_stats - WARNING - Detected 1 counter reset(s) in counter metric. This typically indicates server restart(s) during profiling. Statistics may be inaccurate. Raw delta: 86689016.00
+2026-09-21 20:27:13.723 - aiperf.server_metrics.export_stats - WARNING - Detected 1 counter reset(s) in counter metric with labels {'model': 'swiss-ai/Apertus-v1.5-8B'}. This typically indicates server restart(s) during profiling. Statistics may be inaccurate. Raw delta: 65052.00
+2026-09-21 20:27:14.061 - aiperf.server_metrics.export_stats - WARNING - Detected 1 counter reset(s) in counter metric. This typically indicates server restart(s) during profiling. Statistics may be inaccurate. Raw delta: 8485273.00
+2026-09-21 20:27:14.061 - aiperf.server_metrics.export_stats - WARNING - Detected 1 counter reset(s) in counter metric. This typically indicates server restart(s) during profiling. Statistics may be inaccurate. Raw delta: 86689016.00
+2026-09-21 20:27:14.072 - aiperf.server_metrics.export_stats - WARNING - Detected 1 counter reset(s) in counter metric with labels {'model': 'swiss-ai/Apertus-v1.5-8B'}. This typically indicates server restart(s) during profiling. Statistics may be inaccurate. Raw delta: 65052.00
+2026-09-21 20:27:14.424 - aiperf.server_metrics.export_stats - WARNING - Detected 1 counter reset(s) in counter metric. This typically indicates server restart(s) during profiling. Statistics may be inaccurate. Raw delta: 8485273.00
+2026-09-21 20:27:14.424 - aiperf.server_metrics.export_stats - WARNING - Detected 1 counter reset(s) in counter metric. This typically indicates server restart(s) during profiling. Statistics may be inaccurate. Raw delta: 86689016.00
+2026-09-21 20:27:14.434 - aiperf.server_metrics.export_stats - WARNING - Detected 1 counter reset(s) in counter metric with labels {'model': 'swiss-ai/Apertus-v1.5-8B'}. This typically indicates server restart(s) during profiling. Statistics may be inaccurate. Raw delta: 65052.00
+2026-09-21 20:27:14.497 - system_controller - INFO - Waiting for result domains: server_metrics
+2026-09-21 20:27:14.821 - records_manager - INFO - _finalize_and_process_results completed
+2026-09-21 20:27:14.884 - system_controller - INFO - All results received, initiating shutdown
+2026-09-21 20:27:15.490 - ExporterManager - INFO - Exporting all records
+2026-09-21 20:27:15.676 - ExporterManager - INFO - Exporting console data

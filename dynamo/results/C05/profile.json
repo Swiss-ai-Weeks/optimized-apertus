@@ -1,0 +1,29 @@
+{
+  "tag": "C05",
+  "profile": "C05",
+  "phase": "P3",
+  "desc": "C04 settings + Dynamo frontend + 1 aggregated worker, GPU0 (same GPU as C04)",
+  "kind": "dynamo-agg",
+  "gpus": [
+    "0"
+  ],
+  "n_gpus": 1,
+  "model": "onprem-ai/Apertus-v1.5-8B-FP8",
+  "kv_dtype": "fp8",
+  "router": "kv",
+  "max_model_len": 8192,
+  "gpu_mem_util": 0.8,
+  "max_num_batched_tokens": 8192,
+  "max_num_seqs": 64,
+  "prefill_max_num_seqs": "",
+  "prefill_max_num_batched_tokens": "",
+  "decode_max_num_seqs": "",
+  "decode_max_num_batched_tokens": "",
+  "image": "apertus15-dynamo",
+  "vllm_version": "0.23.1rc1.dev1029+ga601a9d99",
+  "dynamo_version": "1.3.1",
+  "containers": [
+    "apx-frontend",
+    "apx-worker0"
+  ]
+}

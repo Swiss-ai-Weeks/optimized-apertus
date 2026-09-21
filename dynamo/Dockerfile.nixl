@@ -1,0 +1,16 @@
+# apertus15-dynamo + NIXL (KV-cache transfer between GPUs) for disaggregated serving (C07/C08/C08b).
+# nixl==1.3.0 matches the Swiss AI fork's own requirements (requirements/kv_connectors.txt).
+# nixl is a thin wrapper; nixl-cu13 is the CUDA-13 library matching the fork's torch (cu130).
+# --no-deps: the plain "nixl" package would otherwise also pull the CUDA-12 variant.
+ARG BASE=apertus15-dynamo
+FROM ${BASE}
+RUN pip freeze > /opt/pip_before_nixl.txt
+RUN pip install --no-cache-dir --no-deps "nixl==1.3.0" "nixl-cu13==1.3.0"
+RUN pip freeze > /opt/pip_after_nixl.txt
+# Same fork/Dynamo API gate as the base image (proves vLLM + Dynamo are untouched)
+RUN python /opt/check_fork.py
+RUN python -c "import importlib.util as u; \
+assert u.find_spec('nixl') and u.find_spec('nixl_cu13'), 'nixl packages missing'; \
+assert u.find_spec('vllm.distributed.kv_transfer.kv_connector.v1.nixl'), 'vLLM NixlConnector missing'; \
+print('NIXL 1.3.0 (cu13) installed; vLLM NixlConnector present')"
+ENTRYPOINT []
