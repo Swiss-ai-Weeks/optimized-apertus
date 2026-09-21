@@ -1,0 +1,390 @@
+nohup: ignoring input
+
+[1;34m[19:32:59] Preflight[0m
+  [32m[OK][0m docker, nvidia-smi, python3, curl present
+     0, NVIDIA H100 NVL, 95830 MiB
+     1, NVIDIA H100 NVL, 95830 MiB
+  [32m[OK][0m 2 GPUs; using GPU_A=0 GPU_B=1
+  [32m[OK][0m topology saved to results/topology.txt
+  [32m[OK][0m target GPUs are free
+  [32m[OK][0m HF token can read gated swiss-ai/Apertus-v1.5-8B
+  [32m[OK][0m 1085 GB free for weights
+  [32m[OK][0m ports free
+
+[1;34m[19:33:00] Preflight passed[0m
+
+[1;34m[19:33:00] Pulling Swiss AI vLLM fork image[0m
+latest-amd64: Pulling from swiss-ai/vllm_apertus_1.5_release
+Digest: sha256:d85533f251c8272218ae2e519510836376e5a335b44f2204f193018e37753bc6
+Status: Image is up to date for ghcr.io/swiss-ai/vllm_apertus_1.5_release:latest-amd64
+ghcr.io/swiss-ai/vllm_apertus_1.5_release:latest-amd64
+
+[1;34m[19:33:01] Building apertus15-dynamo (Dynamo on top of the fork; verifies the fork survives)[0m
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.dynamo
+#1 transferring dockerfile: 733B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/swiss-ai/vllm_apertus_1.5_release:latest-amd64
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM ghcr.io/swiss-ai/vllm_apertus_1.5_release:latest-amd64@sha256:d85533f251c8272218ae2e519510836376e5a335b44f2204f193018e37753bc6
+#4 resolve ghcr.io/swiss-ai/vllm_apertus_1.5_release:latest-amd64@sha256:d85533f251c8272218ae2e519510836376e5a335b44f2204f193018e37753bc6 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 3.94kB done
+#5 DONE 0.0s
+
+#6 [2/6] RUN pip freeze > /opt/pip_before.txt
+#6 CACHED
+
+#7 [3/6] RUN pip install --no-cache-dir "ai-dynamo==1.3.1"
+#7 CACHED
+
+#8 [4/6] RUN pip freeze > /opt/pip_after.txt
+#8 CACHED
+
+#9 [5/6] COPY check_fork.py /opt/check_fork.py
+#9 DONE 0.0s
+
+#10 [6/6] RUN python /opt/check_fork.py
+#10 11.91 INFO 09-21 19:33:13 [importing.py:53] Triton is installed but 0 active driver(s) found (expected 1). Disabling Triton to prevent runtime errors.
+#10 11.91 INFO 09-21 19:33:13 [importing.py:88] Triton not installed or not compatible; certain GPU-related functions will not be available.
+#10 12.90 W0921 19:33:14.636000 7 venv/lib/python3.12/site-packages/torch/utils/cpp_extension.py:140] No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+#10 13.89 vllm 0.23.1rc1.dev1029+ga601a9d99 | torch 2.11.0+cu130 | apertus archs: ['ApertusForCausalLM', 'Apertus1p5ForConditionalGeneration']
+#10 13.89 WARNING 09-21 19:33:15 [interface.py:368] Failed to import from vllm._C: ModuleNotFoundError("No module named 'vllm._C'")
+#10 15.01 dynamo/vllm: 0 missing vLLM symbols, 0 unverifiable at build time
+#10 15.01 dynamo/frontend: 0 missing vLLM symbols, 0 unverifiable at build time
+#10 15.01 dynamo <-> fork vLLM API check OK
+#10 DONE 16.3s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 23.6s done
+#11 exporting manifest sha256:45775be26c7895a77eec539f17a81c1ed7c85c6fff99147651eeecb81bde2f57 done
+#11 exporting config sha256:f706515daabde49f2cad85a563e191707846fe87bf59437ffa1eb3a6e23c3eba done
+#11 exporting attestation manifest sha256:f27484f84170624b8554a6ec099748f2b53c6303032d70d5622ecb64814e17ac done
+#11 exporting manifest list sha256:9950233486c4366418b339b87bc1cb57c5d0c28a6d16a9f169c9a18d977bcf3f done
+#11 naming to docker.io/library/apertus15-dynamo:latest done
+#11 unpacking to docker.io/library/apertus15-dynamo:latest
+#11 unpacking to docker.io/library/apertus15-dynamo:latest 4.2s done
+#11 DONE 28.1s
+  [32m[OK][0m package changes from Dynamo install -> results/pip_diff_dynamo_install.txt
+
+[1;34m[19:33:47] Building apertus-bench-client (AIPerf)[0m
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.client
+#1 transferring dockerfile: 231B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 0.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9
+#4 resolve docker.io/library/python:3.12-slim@sha256:2f17fc044b579bab302c2e8054d3a686e2cb9a83de48e70534b94cd8ebbe06a9 0.0s done
+#4 DONE 0.0s
+
+#5 [2/3] RUN pip install --no-cache-dir aiperf transformers matplotlib
+#5 CACHED
+
+#6 [3/3] WORKDIR /work
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 exporting manifest sha256:a5b0526d5934d54f6214095999257c2b783f0a86a24536ced0df472e847cd444 done
+#7 exporting config sha256:6429021f11fb24d1415a6dc6bb75f131c7082d75573c77ae096a9607df4007b7 done
+#7 exporting attestation manifest sha256:347cb2790e7d4ec7f226a50d9ad8e7a424c0d48126c3b515c10040d88a8ef89b 0.0s done
+#7 exporting manifest list sha256:8e42df48513c74a5d0c826e92eb496cc8b3a1441fb2bde58b601afaf5004838a done
+#7 naming to docker.io/library/apertus-bench-client:latest done
+#7 unpacking to docker.io/library/apertus-bench-client:latest 0.0s done
+#7 DONE 0.1s
+
+[1;34m[19:33:48] Downloading weights into /home/nvidia/hf-cache[0m
+Fetching 23 files:   0%|          | 0/23 [00:00<?, ?it/s]Fetching 23 files: 100%|██████████| 23/23 [00:00<00:00, 23931.78it/s]
+  [32m[OK][0m weights cached
+
+[1;34m[19:33:51] Detecting AIPerf options and tokenizer[0m
+  [32m[OK][0m client settings -> results/.bench_env
+
+[1;34m[19:34:03] Build complete[0m
+
+[1;34m[19:34:03] Starting dyn-1w on GPU(s): 0[0m
+  [32m[OK][0m API up, model registered
+  [32m[OK][0m GPU 0 engine loaded (85% memory)
+  [32m[OK][0m worker on GPU 0 healthy (:8081)
+     answer: The four official languages of Switzerland are:  1.  **German** 2.  **French** 3.  **Italian** 4.  **Romansh**
+  [32m[OK][0m smoke test passed
+
+[1;34m[19:39:26] dyn-1w ready on http://localhost:8090[0m
+
+[1;34m[19:39:26] dyn-1w | chat (ISL 512 / OSL 256) | concurrency 1 | 64 requests[0m
+
+[1;34m[19:41:30] dyn-1w | chat (ISL 512 / OSL 256) | concurrency 2 | 64 requests[0m
+
+[1;34m[19:42:40] dyn-1w | chat (ISL 512 / OSL 256) | concurrency 4 | 64 requests[0m
+
+[1;34m[19:43:24] dyn-1w | chat (ISL 512 / OSL 256) | concurrency 8 | 64 requests[0m
+
+[1;34m[19:43:56] dyn-1w | chat (ISL 512 / OSL 256) | concurrency 16 | 128 requests[0m
+
+[1;34m[19:44:29] dyn-1w | chat (ISL 512 / OSL 256) | concurrency 32 | 256 requests[0m
+
+[1;34m[19:45:07] dyn-1w | chat (ISL 512 / OSL 256) | concurrency 64 | 512 requests[0m
+
+[1;34m[19:45:53] dyn-1w | rag (ISL 4096 / OSL 256) | concurrency 1 | 64 requests[0m
+
+[1;34m[19:48:12] dyn-1w | rag (ISL 4096 / OSL 256) | concurrency 2 | 64 requests[0m
+
+[1;34m[19:49:29] dyn-1w | rag (ISL 4096 / OSL 256) | concurrency 4 | 64 requests[0m
+
+[1;34m[19:50:17] dyn-1w | rag (ISL 4096 / OSL 256) | concurrency 8 | 64 requests[0m
+
+[1;34m[19:50:55] dyn-1w | rag (ISL 4096 / OSL 256) | concurrency 16 | 128 requests[0m
+
+[1;34m[19:51:52] dyn-1w | rag (ISL 4096 / OSL 256) | concurrency 32 | 256 requests[0m
+
+[1;34m[19:53:36] dyn-1w | rag (ISL 4096 / OSL 256) | concurrency 64 | 512 requests[0m
+  [32m[OK][0m dyn-1w sweep done
+
+[1;34m[19:56:38] Starting dyn-2w-rr on GPU(s): 0 1[0m
+  [32m[OK][0m API up, model registered
+  [32m[OK][0m GPU 0 engine loaded (85% memory)
+  [32m[OK][0m GPU 1 engine loaded (85% memory)
+  [32m[OK][0m worker on GPU 0 healthy (:8081)
+  [32m[OK][0m worker on GPU 1 healthy (:8082)
+     answer: The four official languages of Switzerland are:  1.  **German** 2.  **French** 3.  **Italian** 4.  **Romansh**
+  [32m[OK][0m smoke test passed
+
+[1;34m[20:01:41] dyn-2w-rr ready on http://localhost:8090[0m
+
+[1;34m[20:01:41] dyn-2w-rr | chat (ISL 512 / OSL 256) | concurrency 1 | 64 requests[0m
+
+[1;34m[20:03:45] dyn-2w-rr | chat (ISL 512 / OSL 256) | concurrency 2 | 64 requests[0m
+
+[1;34m[20:04:54] dyn-2w-rr | chat (ISL 512 / OSL 256) | concurrency 4 | 64 requests[0m
+
+[1;34m[20:05:39] dyn-2w-rr | chat (ISL 512 / OSL 256) | concurrency 8 | 64 requests[0m
+
+[1;34m[20:06:10] dyn-2w-rr | chat (ISL 512 / OSL 256) | concurrency 16 | 128 requests[0m
+
+[1;34m[20:06:43] dyn-2w-rr | chat (ISL 512 / OSL 256) | concurrency 32 | 256 requests[0m
+
+[1;34m[20:07:17] dyn-2w-rr | chat (ISL 512 / OSL 256) | concurrency 64 | 512 requests[0m
+
+[1;34m[20:07:56] dyn-2w-rr | rag (ISL 4096 / OSL 256) | concurrency 1 | 64 requests[0m
+
+[1;34m[20:10:15] dyn-2w-rr | rag (ISL 4096 / OSL 256) | concurrency 2 | 64 requests[0m
+
+[1;34m[20:11:35] dyn-2w-rr | rag (ISL 4096 / OSL 256) | concurrency 4 | 64 requests[0m
+
+[1;34m[20:12:22] dyn-2w-rr | rag (ISL 4096 / OSL 256) | concurrency 8 | 64 requests[0m
+
+[1;34m[20:12:55] dyn-2w-rr | rag (ISL 4096 / OSL 256) | concurrency 16 | 128 requests[0m
+
+[1;34m[20:13:38] dyn-2w-rr | rag (ISL 4096 / OSL 256) | concurrency 32 | 256 requests[0m
+
+[1;34m[20:14:41] dyn-2w-rr | rag (ISL 4096 / OSL 256) | concurrency 64 | 512 requests[0m
+  [32m[OK][0m dyn-2w-rr sweep done
+
+[1;34m[20:16:26] Starting dyn-2w-kv on GPU(s): 0 1[0m
+  [32m[OK][0m API up, model registered
+  [32m[OK][0m GPU 0 engine loaded (85% memory)
+  [32m[OK][0m GPU 1 engine loaded (85% memory)
+  [32m[OK][0m worker on GPU 0 healthy (:8081)
+  [32m[OK][0m worker on GPU 1 healthy (:8082)
+     answer: The four official languages of Switzerland are:  1.  **German** 2.  **French** 3.  **Italian** 4.  **Romansh**
+  [32m[OK][0m smoke test passed
+
+[1;34m[20:21:40] dyn-2w-kv ready on http://localhost:8090[0m
+
+[1;34m[20:21:40] dyn-2w-kv | chat (ISL 512 / OSL 256) | concurrency 1 | 64 requests[0m
+
+[1;34m[20:23:43] dyn-2w-kv | chat (ISL 512 / OSL 256) | concurrency 2 | 64 requests[0m
+
+[1;34m[20:24:54] dyn-2w-kv | chat (ISL 512 / OSL 256) | concurrency 4 | 64 requests[0m
+
+[1;34m[20:25:37] dyn-2w-kv | chat (ISL 512 / OSL 256) | concurrency 8 | 64 requests[0m
+
+[1;34m[20:26:08] dyn-2w-kv | chat (ISL 512 / OSL 256) | concurrency 16 | 128 requests[0m
+
+[1;34m[20:26:41] dyn-2w-kv | chat (ISL 512 / OSL 256) | concurrency 32 | 256 requests[0m
+
+[1;34m[20:27:15] dyn-2w-kv | chat (ISL 512 / OSL 256) | concurrency 64 | 512 requests[0m
+
+[1;34m[20:27:55] dyn-2w-kv | rag (ISL 4096 / OSL 256) | concurrency 1 | 64 requests[0m
+
+[1;34m[20:30:15] dyn-2w-kv | rag (ISL 4096 / OSL 256) | concurrency 2 | 64 requests[0m
+
+[1;34m[20:31:30] dyn-2w-kv | rag (ISL 4096 / OSL 256) | concurrency 4 | 64 requests[0m
+
+[1;34m[20:32:20] dyn-2w-kv | rag (ISL 4096 / OSL 256) | concurrency 8 | 64 requests[0m
+
+[1;34m[20:32:56] dyn-2w-kv | rag (ISL 4096 / OSL 256) | concurrency 16 | 128 requests[0m
+
+[1;34m[20:33:40] dyn-2w-kv | rag (ISL 4096 / OSL 256) | concurrency 32 | 256 requests[0m
+
+[1;34m[20:34:41] dyn-2w-kv | rag (ISL 4096 / OSL 256) | concurrency 64 | 512 requests[0m
+  [32m[OK][0m dyn-2w-kv sweep done
+
+[1;34m[20:36:29] Starting vllm-1g on GPU(s): 0[0m
+  [32m[OK][0m API up, model registered
+  [32m[OK][0m GPU 0 engine loaded (85% memory)
+     answer: The four official languages of Switzerland are:  1.  **German** 2.  **French** 3.  **Italian** 4.  **Romansh**
+  [32m[OK][0m smoke test passed
+
+[1;34m[20:40:40] vllm-1g ready on http://localhost:8090[0m
+
+[1;34m[20:40:41] vllm-1g | chat (ISL 512 / OSL 256) | concurrency 1 | 64 requests[0m
+
+[1;34m[20:42:38] vllm-1g | chat (ISL 512 / OSL 256) | concurrency 2 | 64 requests[0m
+
+[1;34m[20:43:47] vllm-1g | chat (ISL 512 / OSL 256) | concurrency 4 | 64 requests[0m
+
+[1;34m[20:44:30] vllm-1g | chat (ISL 512 / OSL 256) | concurrency 8 | 64 requests[0m
+
+[1;34m[20:45:01] vllm-1g | chat (ISL 512 / OSL 256) | concurrency 16 | 128 requests[0m
+
+[1;34m[20:45:33] vllm-1g | chat (ISL 512 / OSL 256) | concurrency 32 | 256 requests[0m
+
+[1;34m[20:46:10] vllm-1g | chat (ISL 512 / OSL 256) | concurrency 64 | 512 requests[0m
+
+[1;34m[20:46:54] vllm-1g | rag (ISL 4096 / OSL 256) | concurrency 1 | 64 requests[0m
+
+[1;34m[20:49:11] vllm-1g | rag (ISL 4096 / OSL 256) | concurrency 2 | 64 requests[0m
+
+[1;34m[20:50:25] vllm-1g | rag (ISL 4096 / OSL 256) | concurrency 4 | 64 requests[0m
+
+[1;34m[20:51:14] vllm-1g | rag (ISL 4096 / OSL 256) | concurrency 8 | 64 requests[0m
+
+[1;34m[20:51:49] vllm-1g | rag (ISL 4096 / OSL 256) | concurrency 16 | 128 requests[0m
+
+[1;34m[20:52:44] vllm-1g | rag (ISL 4096 / OSL 256) | concurrency 32 | 256 requests[0m
+
+[1;34m[20:54:25] vllm-1g | rag (ISL 4096 / OSL 256) | concurrency 64 | 512 requests[0m
+  [32m[OK][0m vllm-1g sweep done
+  [32m[OK][0m stopped apertus-srv, apertus-etcd, apertus-nats
+
+[1;34m[20:57:20] Summarizing[0m
+# Apertus 1.5 8B — Dynamo 1 vs 2 workers
+
+p95 TTFT SLO = 2000 ms (✗ = missed)
+
+
+## Scenario: chat
+
+| mode | conc | TTFT p50 | TTFT p95 | ITL avg | out tok/s | req/s | SLO |
+|---|---:|---:|---:|---:|---:|---:|:-:|
+| vllm-1g | 1 | 55 | 64 | 6.1 | 156 | 0.63 | ✓ |
+| vllm-1g | 2 | 54 | 76 | 6.1 | 318 | 1.25 | ✓ |
+| vllm-1g | 4 | 61 | 94 | 6.2 | 614 | 2.45 | ✓ |
+| vllm-1g | 8 | 84 | 90 | 6.4 | 1,195 | 4.72 | ✓ |
+| vllm-1g | 16 | 165 | 386 | 6.6 | 2,101 | 8.38 | ✓ |
+| vllm-1g | 32 | 202 | 677 | 7.7 | 3,490 | 13.81 | ✓ |
+| vllm-1g | 64 | 293 | 1,221 | 10.4 | 5,065 | 20.09 | ✓ |
+| dyn-1w | 1 | 55 | 58 | 6.1 | 156 | 0.63 | ✓ |
+| dyn-1w | 2 | 49 | 51 | 6.1 | 319 | 1.26 | ✓ |
+| dyn-1w | 4 | 50 | 87 | 6.2 | 618 | 2.46 | ✓ |
+| dyn-1w | 8 | 55 | 88 | 6.4 | 1,207 | 4.78 | ✓ |
+| dyn-1w | 16 | 89 | 325 | 6.6 | 2,157 | 8.56 | ✓ |
+| dyn-1w | 32 | 101 | 603 | 7.8 | 3,570 | 14.14 | ✓ |
+| dyn-1w | 64 | 349 | 1,174 | 10.4 | 5,153 | 20.51 | ✓ |
+| dyn-2w-rr | 1 | 62 | 75 | 6.1 | 158 | 0.62 | ✓ |
+| dyn-2w-rr | 2 | 55 | 58 | 6.1 | 316 | 1.25 | ✓ |
+| dyn-2w-rr | 4 | 50 | 67 | 6.1 | 627 | 2.50 | ✓ |
+| dyn-2w-rr | 8 | 52 | 62 | 6.2 | 1,234 | 4.91 | ✓ |
+| dyn-2w-rr | 16 | 87 | 187 | 6.4 | 2,335 | 9.20 | ✓ |
+| dyn-2w-rr | 32 | 180 | 323 | 6.7 | 4,208 | 16.80 | ✓ |
+| dyn-2w-rr | 64 | 325 | 598 | 7.9 | 6,889 | 27.31 | ✓ |
+| dyn-2w-kv | 1 | 55 | 57 | 6.1 | 155 | 0.62 | ✓ |
+| dyn-2w-kv | 2 | 50 | 82 | 6.1 | 312 | 1.25 | ✓ |
+| dyn-2w-kv | 4 | 52 | 64 | 6.1 | 626 | 2.47 | ✓ |
+| dyn-2w-kv | 8 | 63 | 94 | 6.2 | 1,209 | 4.85 | ✓ |
+| dyn-2w-kv | 16 | 88 | 186 | 6.4 | 2,301 | 9.15 | ✓ |
+| dyn-2w-kv | 32 | 118 | 181 | 7.2 | 4,152 | 16.38 | ✓ |
+| dyn-2w-kv | 64 | 319 | 591 | 7.9 | 6,846 | 27.38 | ✓ |
+
+**Ratios (output tok/s)**
+
+| conc | dyn-1w / vllm-1g (overhead) | 2w-rr / 1w (2nd GPU) | 2w-kv / 2w-rr (router) | 2w-kv / 1w (total) |
+|---:|---:|---:|---:|---:|
+| 1 | 1.00× | 1.01× | 0.98× | 0.99× |
+| 2 | 1.00× | 0.99× | 0.99× | 0.98× |
+| 4 | 1.01× | 1.01× | 1.00× | 1.01× |
+| 8 | 1.01× | 1.02× | 0.98× | 1.00× |
+| 16 | 1.03× | 1.08× | 0.99× | 1.07× |
+| 32 | 1.02× | 1.18× | 0.99× | 1.16× |
+| 64 | 1.02× | 1.34× | 0.99× | 1.33× |
+
+**Max throughput within SLO**
+
+- vllm-1g: 5,065 tok/s
+- dyn-1w: 5,153 tok/s
+- dyn-2w-rr: 6,889 tok/s
+- dyn-2w-kv: 6,846 tok/s
+
+## Scenario: rag
+
+| mode | conc | TTFT p50 | TTFT p95 | ITL avg | out tok/s | req/s | SLO |
+|---|---:|---:|---:|---:|---:|---:|:-:|
+| vllm-1g | 1 | 227 | 237 | 6.4 | 137 | 0.54 | ✓ |
+| vllm-1g | 2 | 100 | 135 | 6.7 | 283 | 1.13 | ✓ |
+| vllm-1g | 4 | 101 | 149 | 7.2 | 527 | 2.08 | ✓ |
+| vllm-1g | 8 | 114 | 250 | 8.3 | 891 | 3.51 | ✓ |
+| vllm-1g | 16 | 391 | 1,552 | 15.5 | 894 | 3.57 | ✓ |
+| vllm-1g | 32 | 2,622 | 3,771 | 27.4 | 869 | 3.42 | ✗ |
+| vllm-1g | 64 | 1,847 | 6,952 | 60.0 | 925 | 3.66 | ✗ |
+| dyn-1w | 1 | 209 | 211 | 6.4 | 138 | 0.54 | ✓ |
+| dyn-1w | 2 | 84 | 102 | 6.8 | 284 | 1.13 | ✓ |
+| dyn-1w | 4 | 109 | 118 | 7.2 | 525 | 2.10 | ✓ |
+| dyn-1w | 8 | 138 | 147 | 8.5 | 906 | 3.62 | ✓ |
+| dyn-1w | 16 | 887 | 2,587 | 13.4 | 906 | 3.62 | ✗ |
+| dyn-1w | 32 | 2,063 | 3,624 | 29.0 | 864 | 3.42 | ✗ |
+| dyn-1w | 64 | 1,791 | 6,748 | 60.1 | 928 | 3.66 | ✗ |
+| dyn-2w-rr | 1 | 208 | 213 | 6.4 | 137 | 0.55 | ✓ |
+| dyn-2w-rr | 2 | 209 | 214 | 6.4 | 275 | 1.09 | ✓ |
+| dyn-2w-rr | 4 | 95 | 104 | 6.6 | 572 | 2.26 | ✓ |
+| dyn-2w-rr | 8 | 113 | 132 | 7.1 | 1,058 | 4.18 | ✓ |
+| dyn-2w-rr | 16 | 235 | 1,377 | 9.4 | 1,398 | 5.51 | ✓ |
+| dyn-2w-rr | 32 | 672 | 1,411 | 16.4 | 1,646 | 6.51 | ✓ |
+| dyn-2w-rr | 64 | 571 | 3,601 | 33.6 | 1,699 | 6.72 | ✗ |
+| dyn-2w-kv | 1 | 209 | 213 | 6.4 | 137 | 0.54 | ✓ |
+| dyn-2w-kv | 2 | 95 | 100 | 6.6 | 285 | 1.13 | ✓ |
+| dyn-2w-kv | 4 | 80 | 221 | 7.0 | 529 | 2.09 | ✓ |
+| dyn-2w-kv | 8 | 90 | 231 | 7.7 | 951 | 3.79 | ✓ |
+| dyn-2w-kv | 16 | 317 | 1,359 | 9.8 | 1,333 | 5.28 | ✓ |
+| dyn-2w-kv | 32 | 770 | 1,872 | 15.5 | 1,686 | 6.67 | ✓ |
+| dyn-2w-kv | 64 | 1,244 | 3,604 | 32.0 | 1,712 | 6.76 | ✗ |
+
+**Ratios (output tok/s)**
+
+| conc | dyn-1w / vllm-1g (overhead) | 2w-rr / 1w (2nd GPU) | 2w-kv / 2w-rr (router) | 2w-kv / 1w (total) |
+|---:|---:|---:|---:|---:|
+| 1 | 1.00× | 0.99× | 1.01× | 1.00× |
+| 2 | 1.00× | 0.97× | 1.04× | 1.01× |
+| 4 | 1.00× | 1.09× | 0.92× | 1.01× |
+| 8 | 1.02× | 1.17× | 0.90× | 1.05× |
+| 16 | 1.01× | 1.54× | 0.95× | 1.47× |
+| 32 | 0.99× | 1.91× | 1.02× | 1.95× |
+| 64 | 1.00× | 1.83× | 1.01× | 1.84× |
+
+**Max throughput within SLO**
+
+- vllm-1g: 894 tok/s
+- dyn-1w: 906 tok/s
+- dyn-2w-rr: 1,646 tok/s
+- dyn-2w-kv: 1,686 tok/s
+
+
+[1;34m[20:57:35] Done. Copy results_*.tgz off the LaunchPad box NOW (sessions are ephemeral).[0m

@@ -1,0 +1,1709 @@
+{
+  "data": {
+    "benchmark_id": "c56bd17775cb",
+    "end_ns": 1790023870721778894,
+    "endpoint_summaries": {
+      "localhost:8090": {
+        "endpoint_url": "http://localhost:8090/metrics",
+        "info": {
+          "avg_fetch_latency_ms": 21.63370973958333,
+          "avg_update_interval_ms": 324.1510791263158,
+          "duration_seconds": 30.794352517,
+          "first_fetch_ns": 1790023840037838730,
+          "first_update_ns": 1790023840037838730,
+          "last_fetch_ns": 1790023870832191247,
+          "last_update_ns": 1790023870832191247,
+          "median_update_interval_ms": 333.456703,
+          "total_fetches": 96,
+          "unique_updates": 96
+        },
+        "metrics": {
+          "http_request_duration_highr_seconds": {
+            "description": "Latency with many buckets but no API specific labels. Made for more accurate percentile calculations.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "0.01": 0,
+                  "0.025": 0,
+                  "0.05": 0,
+                  "0.075": 0,
+                  "0.1": 0,
+                  "0.25": 0,
+                  "0.5": 0,
+                  "0.75": 0,
+                  "1.0": 0,
+                  "1.5": 0,
+                  "10.0": 64,
+                  "2.0": 64,
+                  "2.5": 64,
+                  "3.0": 64,
+                  "3.5": 64,
+                  "30.0": 64,
+                  "4.0": 64,
+                  "4.5": 64,
+                  "5.0": 64,
+                  "60.0": 64,
+                  "7.5": 64
+                },
+                "stats": {
+                  "avg": 1.9066911595728016,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 1.8766587920540772,
+                  "p1_estimate": 1.8699015093623643,
+                  "p25_estimate": 1.8879209298735988,
+                  "p50_estimate": 1.9066911595728016,
+                  "p5_estimate": 1.8729047461142367,
+                  "p75_estimate": 1.9254613892720043,
+                  "p90_estimate": 1.936723527091526,
+                  "p95_estimate": 1.9404775730313664,
+                  "p99_estimate": 1.9434808097832388,
+                  "sum": 122.0282342126593,
+                  "sum_rate": 3.9591597083383077
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "http_request_duration_seconds": {
+            "description": "Latency with only few buckets by handler. Made to be only used if aggregation by handler is important.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 0,
+                  "0.1": 0,
+                  "0.5": 0,
+                  "1.0": 0
+                },
+                "labels": {
+                  "handler": "/v1/models",
+                  "method": "GET"
+                },
+                "stats": {
+                  "count": 0
+                }
+              },
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "0.1": 0,
+                  "0.5": 0,
+                  "1.0": 0
+                },
+                "labels": {
+                  "handler": "/v1/chat/completions",
+                  "method": "POST"
+                },
+                "stats": {
+                  "avg": 1.9066911595728016,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 1.1813382319145602,
+                  "p1_estimate": 1.018133823191456,
+                  "p25_estimate": 1.4533455797864008,
+                  "p50_estimate": 1.9066911595728016,
+                  "p5_estimate": 1.09066911595728,
+                  "p75_estimate": 2.3600367393592023,
+                  "p90_estimate": 2.632044087231043,
+                  "p95_estimate": 2.7227132031883223,
+                  "p99_estimate": 2.795248495954147,
+                  "sum": 122.0282342126593,
+                  "sum_rate": 3.9591597083383077
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "http_requests": {
+            "description": "Total number of requests by method, status and handler.",
+            "series": [
+              {
+                "labels": {
+                  "handler": "/v1/models",
+                  "method": "GET",
+                  "status": "2xx"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "handler": "/v1/chat/completions",
+                  "method": "POST",
+                  "status": "2xx"
+                },
+                "stats": {
+                  "rate": 2.076455690509084,
+                  "total": 64.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "process_cpu_seconds": {
+            "description": "Total user and system CPU time spent in seconds.",
+            "series": [
+              {
+                "stats": {
+                  "rate": 0.4019888438344916,
+                  "total": 12.389999999999958
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "process_max_fds": {
+            "description": "Maximum number of open file descriptors.",
+            "series": [
+              {
+                "stats": {
+                  "avg": 1048576.0,
+                  "max": 1048576.0,
+                  "min": 1048576.0,
+                  "p1": 1048576.0,
+                  "p10": 1048576.0,
+                  "p25": 1048576.0,
+                  "p5": 1048576.0,
+                  "p50": 1048576.0,
+                  "p75": 1048576.0,
+                  "p90": 1048576.0,
+                  "p95": 1048576.0,
+                  "p99": 1048576.0,
+                  "std": 0.0
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "process_open_fds": {
+            "description": "Number of open file descriptors.",
+            "series": [
+              {
+                "stats": {
+                  "avg": 50.0,
+                  "max": 50.0,
+                  "min": 50.0,
+                  "p1": 50.0,
+                  "p10": 50.0,
+                  "p25": 50.0,
+                  "p5": 50.0,
+                  "p50": 50.0,
+                  "p75": 50.0,
+                  "p90": 50.0,
+                  "p95": 50.0,
+                  "p99": 50.0,
+                  "std": 0.0
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "process_resident_memory_bytes": {
+            "description": "Resident memory size in bytes.",
+            "series": [
+              {
+                "stats": {
+                  "avg": 2591806805.3333335,
+                  "max": 2591883264.0,
+                  "min": 2590834688.0,
+                  "p1": 2590834688.0,
+                  "p10": 2591883264.0,
+                  "p25": 2591883264.0,
+                  "p5": 2590834688.0,
+                  "p50": 2591883264.0,
+                  "p75": 2591883264.0,
+                  "p90": 2591883264.0,
+                  "p95": 2591883264.0,
+                  "p99": 2591883264.0,
+                  "std": 274060.54525887704
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "process_start_time_seconds": {
+            "description": "Start time of the process since unix epoch in seconds.",
+            "series": [
+              {
+                "stats": {
+                  "avg": 1790022988.9900005,
+                  "max": 1790022988.99,
+                  "min": 1790022988.99,
+                  "p1": 1790022988.99,
+                  "p10": 1790022988.99,
+                  "p25": 1790022988.99,
+                  "p5": 1790022988.99,
+                  "p50": 1790022988.99,
+                  "p75": 1790022988.99,
+                  "p90": 1790022988.99,
+                  "p95": 1790022988.99,
+                  "p99": 1790022988.99,
+                  "std": 4.793402575970026e-7
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "process_virtual_memory_bytes": {
+            "description": "Virtual memory size in bytes.",
+            "series": [
+              {
+                "stats": {
+                  "avg": 39528924672.0,
+                  "max": 39528935424.0,
+                  "min": 39528919040.0,
+                  "p1": 39528919040.0,
+                  "p10": 39528919040.0,
+                  "p25": 39528919040.0,
+                  "p5": 39528919040.0,
+                  "p50": 39528919040.0,
+                  "p75": 39528935424.0,
+                  "p90": 39528935424.0,
+                  "p95": 39528935424.0,
+                  "p99": 39528935424.0,
+                  "std": 7822.575524185046
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "python_gc_collections": {
+            "description": "Number of times this generation was collected",
+            "series": [
+              {
+                "labels": {
+                  "generation": "0"
+                },
+                "stats": {
+                  "rate": 0.22711234114943107,
+                  "total": 7.0
+                }
+              },
+              {
+                "labels": {
+                  "generation": "1"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "generation": "2"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "python_gc_objects_collected": {
+            "description": "Objects collected during gc",
+            "series": [
+              {
+                "labels": {
+                  "generation": "0"
+                },
+                "stats": {
+                  "rate": 63.39678780085547,
+                  "total": 1954.0
+                }
+              },
+              {
+                "labels": {
+                  "generation": "1"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "generation": "2"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "python_gc_objects_uncollectable": {
+            "description": "Uncollectable objects found during GC",
+            "series": [
+              {
+                "labels": {
+                  "generation": "0"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "generation": "1"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "generation": "2"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "python_info": {
+            "description": "Python platform information",
+            "series": [
+              {
+                "labels": {
+                  "implementation": "CPython",
+                  "major": "3",
+                  "minor": "12",
+                  "patchlevel": "3",
+                  "version": "3.12.3"
+                },
+                "stats": {
+                  "avg": 1.0,
+                  "max": 1.0,
+                  "min": 1.0,
+                  "p1": 1.0,
+                  "p10": 1.0,
+                  "p25": 1.0,
+                  "p5": 1.0,
+                  "p50": 1.0,
+                  "p75": 1.0,
+                  "p90": 1.0,
+                  "p95": 1.0,
+                  "p99": 1.0,
+                  "std": 0.0
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "vllm:cache_config_info": {
+            "description": "Information of the LLMEngine CacheConfig",
+            "series": [
+              {
+                "labels": {
+                  "_block_size_resolved": "True",
+                  "block_size": "16",
+                  "cache_dtype": "auto",
+                  "calculate_kv_scales": "False",
+                  "enable_prefix_caching": "True",
+                  "engine": "0",
+                  "gpu_memory_utilization": "0.8",
+                  "hash_block_size": "None",
+                  "is_attention_free": "False",
+                  "kv_cache_dtype_skip_layers": "[]",
+                  "kv_cache_max_concurrency": "13.84423828125",
+                  "kv_cache_memory_bytes": "None",
+                  "kv_cache_size_tokens": "453648",
+                  "kv_offloading_backend": "native",
+                  "kv_offloading_size": "None",
+                  "kv_sharing_fast_prefill": "False",
+                  "mamba_block_size": "None",
+                  "mamba_cache_dtype": "auto",
+                  "mamba_cache_mode": "none",
+                  "mamba_page_size_padded": "None",
+                  "mamba_ssm_cache_dtype": "auto",
+                  "num_cpu_blocks": "None",
+                  "num_gpu_blocks": "28353",
+                  "num_gpu_blocks_override": "None",
+                  "prefix_caching_hash_algo": "sha256",
+                  "skip_page_size_padded": "None",
+                  "sliding_window": "None",
+                  "user_specified_block_size": "False",
+                  "user_specified_mamba_block_size": "False"
+                },
+                "stats": {
+                  "avg": 1.0,
+                  "max": 1.0,
+                  "min": 1.0,
+                  "p1": 1.0,
+                  "p10": 1.0,
+                  "p25": 1.0,
+                  "p5": 1.0,
+                  "p50": 1.0,
+                  "p75": 1.0,
+                  "p90": 1.0,
+                  "p95": 1.0,
+                  "p99": 1.0,
+                  "std": 0.0
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "vllm:e2e_request_latency_seconds": {
+            "description": "Histogram of e2e request latency in seconds.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "0.3": 0,
+                  "0.5": 0,
+                  "0.8": 0,
+                  "1.0": 0,
+                  "1.5": 0,
+                  "10.0": 64,
+                  "120.0": 64,
+                  "15.0": 64,
+                  "1920.0": 64,
+                  "2.0": 64,
+                  "2.5": 64,
+                  "20.0": 64,
+                  "240.0": 64,
+                  "30.0": 64,
+                  "40.0": 64,
+                  "480.0": 64,
+                  "5.0": 64,
+                  "50.0": 64,
+                  "60.0": 64,
+                  "7680.0": 64,
+                  "960.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 1.9011929519474506,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 1.8714312206496346,
+                  "p1_estimate": 1.864734831107626,
+                  "p25_estimate": 1.8825918698863155,
+                  "p50_estimate": 1.9011929519474506,
+                  "p5_estimate": 1.8677110042374077,
+                  "p75_estimate": 1.9197940340085857,
+                  "p90_estimate": 1.9309546832452666,
+                  "p95_estimate": 1.9346748996574936,
+                  "p99_estimate": 1.9376510727872753,
+                  "sum": 121.67634892463684,
+                  "sum_rate": 3.9477429238270476
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:engine_sleep_state": {
+            "description": "Engine sleep state; awake = 0 means engine is sleeping; awake = 1 means engine is awake; weights_offloaded = 1 means sleep level 1; discard_all = 1 means sleep level 2.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B",
+                  "sleep_state": "awake"
+                },
+                "stats": {
+                  "avg": 1.0,
+                  "max": 1.0,
+                  "min": 1.0,
+                  "p1": 1.0,
+                  "p10": 1.0,
+                  "p25": 1.0,
+                  "p5": 1.0,
+                  "p50": 1.0,
+                  "p75": 1.0,
+                  "p90": 1.0,
+                  "p95": 1.0,
+                  "p99": 1.0,
+                  "std": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B",
+                  "sleep_state": "weights_offloaded"
+                },
+                "stats": {
+                  "avg": 0.0,
+                  "max": 0.0,
+                  "min": 0.0,
+                  "p1": 0.0,
+                  "p10": 0.0,
+                  "p25": 0.0,
+                  "p5": 0.0,
+                  "p50": 0.0,
+                  "p75": 0.0,
+                  "p90": 0.0,
+                  "p95": 0.0,
+                  "p99": 0.0,
+                  "std": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B",
+                  "sleep_state": "discard_all"
+                },
+                "stats": {
+                  "avg": 0.0,
+                  "max": 0.0,
+                  "min": 0.0,
+                  "p1": 0.0,
+                  "p10": 0.0,
+                  "p25": 0.0,
+                  "p5": 0.0,
+                  "p50": 0.0,
+                  "p75": 0.0,
+                  "p90": 0.0,
+                  "p95": 0.0,
+                  "p99": 0.0,
+                  "std": 0.0
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "vllm:estimated_flops_per_gpu": {
+            "description": "Estimated number of floating point operations per GPU (for Model Flops Utilization calculations).",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:estimated_read_bytes_per_gpu": {
+            "description": "Estimated number of bytes read from memory per GPU (for Model Flops Utilization calculations).",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:estimated_write_bytes_per_gpu": {
+            "description": "Estimated number of bytes written to memory per GPU (for Model Flops Utilization calculations).",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:external_prefix_cache_hits": {
+            "description": "External prefix cache hits from KV connector cross-instance cache sharing, in terms of number of cached tokens.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:external_prefix_cache_queries": {
+            "description": "External prefix cache queries from KV connector cross-instance cache sharing, in terms of number of queried tokens.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:generation_tokens": {
+            "description": "Number of generation tokens processed.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 531.5726567703255,
+                  "total": 16384.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:inter_token_latency_seconds": {
+            "description": "Histogram of inter-token latency in seconds.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 16320,
+                  "0.01": 16168,
+                  "0.025": 16318,
+                  "0.05": 16320,
+                  "0.075": 16320,
+                  "0.1": 16320,
+                  "0.15": 16320,
+                  "0.2": 16320,
+                  "0.3": 16320,
+                  "0.4": 16320,
+                  "0.5": 16320,
+                  "0.75": 16320,
+                  "1.0": 16320,
+                  "10.0": 16320,
+                  "2.5": 16320,
+                  "20.0": 16320,
+                  "40.0": 16320,
+                  "5.0": 16320,
+                  "7.5": 16320,
+                  "80.0": 16320
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 0.007117300204360314,
+                  "count": 16320,
+                  "count_rate": 529.4962010798164,
+                  "p10_estimate": 0.004993646107621691,
+                  "p1_estimate": 0.0045089961615756785,
+                  "p25_estimate": 0.005801396017698381,
+                  "p50_estimate": 0.007147645867826197,
+                  "p5_estimate": 0.004724396137596129,
+                  "p75_estimate": 0.008493895717954014,
+                  "p90_estimate": 0.008726462838654676,
+                  "p95_estimate": 0.008743377949699538,
+                  "p99_estimate": 0.008756910038535425,
+                  "sum": 116.15433933516033,
+                  "sum_rate": 3.7685834201533877
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:iteration_tokens_total": {
+            "description": "Histogram of number of tokens per engine_step.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 4276,
+                  "1.0": 27,
+                  "1024.0": 4276,
+                  "128.0": 4276,
+                  "16.0": 4276,
+                  "16384.0": 4276,
+                  "2048.0": 4276,
+                  "256.0": 4276,
+                  "32.0": 4276,
+                  "4096.0": 4276,
+                  "512.0": 4276,
+                  "64.0": 4276,
+                  "8.0": 4276,
+                  "8192.0": 4276
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 3.8765201122544433,
+                  "count": 4276,
+                  "count_rate": 138.73319582213819,
+                  "p10_estimate": 2.189359683607395,
+                  "p1_estimate": 2.0949871286525763,
+                  "p25_estimate": 2.8203698504452235,
+                  "p50_estimate": 3.8720534618416043,
+                  "p5_estimate": 2.122399834317842,
+                  "p75_estimate": 4.923737073237985,
+                  "p90_estimate": 5.554747240075812,
+                  "p95_estimate": 5.765083962355089,
+                  "p99_estimate": 5.93335334017851,
+                  "sum": 16576.0,
+                  "sum_rate": 537.8020238418528
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:kv_cache_usage_perc": {
+            "description": "KV-cache usage. 1 means 100 percent usage.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 0.04035282637321294,
+                  "max": 0.04514672686230248,
+                  "min": 0.0,
+                  "p1": 0.0,
+                  "p10": 0.02601227426636571,
+                  "p25": 0.04330382336343111,
+                  "p5": 0.022670358352144482,
+                  "p50": 0.04394751693002258,
+                  "p75": 0.04452066873589164,
+                  "p90": 0.04491746613995484,
+                  "p95": 0.04500564334085777,
+                  "p99": 0.04511321952595938,
+                  "std": 0.010135356988486293
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "vllm:mm_cache_hits": {
+            "description": "Multi-modal cache hits, in terms of number of cached items.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:mm_cache_queries": {
+            "description": "Multi-modal cache queries, in terms of number of queried items.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:num_preemptions": {
+            "description": "Cumulative number of preemption from the engine.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:num_requests_running": {
+            "description": "Number of requests in model execution batches.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 3.625,
+                  "max": 4.0,
+                  "min": 0.0,
+                  "p1": 0.0,
+                  "p10": 2.0,
+                  "p25": 4.0,
+                  "p5": 1.75,
+                  "p50": 4.0,
+                  "p75": 4.0,
+                  "p90": 4.0,
+                  "p95": 4.0,
+                  "p99": 4.0,
+                  "std": 0.9651833749958715
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "vllm:num_requests_waiting": {
+            "description": "Number of requests waiting to be processed.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 0.0,
+                  "max": 0.0,
+                  "min": 0.0,
+                  "p1": 0.0,
+                  "p10": 0.0,
+                  "p25": 0.0,
+                  "p5": 0.0,
+                  "p50": 0.0,
+                  "p75": 0.0,
+                  "p90": 0.0,
+                  "p95": 0.0,
+                  "p99": 0.0,
+                  "std": 0.0
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "vllm:num_requests_waiting_by_reason": {
+            "description": "Number of waiting requests by reason. Reason labels: 'capacity' = waiting for scheduling capacity; 'deferred' = deferred by transient constraints (LoRA budget, KV transfer, blocked status). Sum of all reasons equals vllm:num_requests_waiting.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B",
+                  "reason": "capacity"
+                },
+                "stats": {
+                  "avg": 0.0,
+                  "max": 0.0,
+                  "min": 0.0,
+                  "p1": 0.0,
+                  "p10": 0.0,
+                  "p25": 0.0,
+                  "p5": 0.0,
+                  "p50": 0.0,
+                  "p75": 0.0,
+                  "p90": 0.0,
+                  "p95": 0.0,
+                  "p99": 0.0,
+                  "std": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B",
+                  "reason": "deferred"
+                },
+                "stats": {
+                  "avg": 0.0,
+                  "max": 0.0,
+                  "min": 0.0,
+                  "p1": 0.0,
+                  "p10": 0.0,
+                  "p25": 0.0,
+                  "p5": 0.0,
+                  "p50": 0.0,
+                  "p75": 0.0,
+                  "p90": 0.0,
+                  "p95": 0.0,
+                  "p99": 0.0,
+                  "std": 0.0
+                }
+              }
+            ],
+            "type": "gauge"
+          },
+          "vllm:prefix_cache_hits": {
+            "description": "Prefix cache hits, in terms of number of cached tokens.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 14917.25768061726,
+                  "total": 459776.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:prefix_cache_queries": {
+            "description": "Prefix cache queries, in terms of number of queried tokens.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 14923.487047688786,
+                  "total": 459968.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:prompt_tokens": {
+            "description": "Number of prefill tokens processed.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 14923.487047688786,
+                  "total": 459968.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:prompt_tokens_by_source": {
+            "description": "Number of prompt tokens by source.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B",
+                  "source": "local_compute"
+                },
+                "stats": {
+                  "rate": 6.229367071527252,
+                  "total": 192.0
+                }
+              },
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B",
+                  "source": "local_cache_hit"
+                },
+                "stats": {
+                  "rate": 14917.25768061726,
+                  "total": 459776.0
+                }
+              },
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B",
+                  "source": "external_kv_transfer"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:prompt_tokens_cached": {
+            "description": "Number of cached prompt tokens (local + external).",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 14917.25768061726,
+                  "total": 459776.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:request_decode_time_seconds": {
+            "description": "Histogram of time spent in DECODE phase for request.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "0.3": 0,
+                  "0.5": 0,
+                  "0.8": 0,
+                  "1.0": 0,
+                  "1.5": 0,
+                  "10.0": 64,
+                  "120.0": 64,
+                  "15.0": 64,
+                  "1920.0": 64,
+                  "2.0": 64,
+                  "2.5": 64,
+                  "20.0": 64,
+                  "240.0": 64,
+                  "30.0": 64,
+                  "40.0": 64,
+                  "480.0": 64,
+                  "5.0": 64,
+                  "50.0": 64,
+                  "60.0": 64,
+                  "7680.0": 64,
+                  "960.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 1.8149115521118802,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 1.707817496759987,
+                  "p1_estimate": 1.6832479687292377,
+                  "p25_estimate": 1.7487667101445692,
+                  "p50_estimate": 1.8170153991188727,
+                  "p5_estimate": 1.6941677589651263,
+                  "p75_estimate": 1.8852640880931761,
+                  "p90_estimate": 1.9203200254218182,
+                  "p95_estimate": 1.921665075716679,
+                  "p99_estimate": 1.9227411159525676,
+                  "sum": 116.15433933516033,
+                  "sum_rate": 3.7685834201533877
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:request_generation_tokens": {
+            "description": "Number of generation tokens processed.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "1.0": 0,
+                  "10.0": 0,
+                  "100.0": 0,
+                  "1000.0": 64,
+                  "10000.0": 64,
+                  "2.0": 0,
+                  "20.0": 0,
+                  "200.0": 0,
+                  "2000.0": 64,
+                  "20000.0": 64,
+                  "5.0": 0,
+                  "50.0": 0,
+                  "500.0": 64,
+                  "5000.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 256.0,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 200.0,
+                  "p1_estimate": 200.0,
+                  "p25_estimate": 200.0,
+                  "p50_estimate": 241.2734375,
+                  "p5_estimate": 200.0,
+                  "p75_estimate": 315.1015625,
+                  "p90_estimate": 359.3984375,
+                  "p95_estimate": 374.1640625,
+                  "p99_estimate": 385.9765625,
+                  "sum": 16384.0,
+                  "sum_rate": 531.5726567703255
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:request_inference_time_seconds": {
+            "description": "Histogram of time spent in RUNNING phase for request.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "0.3": 0,
+                  "0.5": 0,
+                  "0.8": 0,
+                  "1.0": 0,
+                  "1.5": 0,
+                  "10.0": 64,
+                  "120.0": 64,
+                  "15.0": 64,
+                  "1920.0": 64,
+                  "2.0": 64,
+                  "2.5": 64,
+                  "20.0": 64,
+                  "240.0": 64,
+                  "30.0": 64,
+                  "40.0": 64,
+                  "480.0": 64,
+                  "5.0": 64,
+                  "50.0": 64,
+                  "60.0": 64,
+                  "7680.0": 64,
+                  "960.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 1.8378350442799274,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 1.7308146619966158,
+                  "p1_estimate": 1.7058675441208175,
+                  "p25_estimate": 1.7723931917896132,
+                  "p50_estimate": 1.8416907414446086,
+                  "p5_estimate": 1.7169551520656168,
+                  "p75_estimate": 1.910988291099604,
+                  "p90_estimate": 1.9352117987526378,
+                  "p95_estimate": 1.9367666211836367,
+                  "p99_estimate": 1.938010479128436,
+                  "sum": 117.62144283391535,
+                  "sum_rate": 3.8161830359120694
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:request_max_num_generation_tokens": {
+            "description": "Histogram of maximum number of requested generation tokens.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "1.0": 0,
+                  "10.0": 0,
+                  "100.0": 0,
+                  "1000.0": 64,
+                  "10000.0": 64,
+                  "2.0": 0,
+                  "20.0": 0,
+                  "200.0": 0,
+                  "2000.0": 64,
+                  "20000.0": 64,
+                  "5.0": 0,
+                  "50.0": 0,
+                  "500.0": 64,
+                  "5000.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 256.0,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 200.0,
+                  "p1_estimate": 200.0,
+                  "p25_estimate": 200.0,
+                  "p50_estimate": 241.2734375,
+                  "p5_estimate": 200.0,
+                  "p75_estimate": 315.1015625,
+                  "p90_estimate": 359.3984375,
+                  "p95_estimate": 374.1640625,
+                  "p99_estimate": 385.9765625,
+                  "sum": 16384.0,
+                  "sum_rate": 531.5726567703255
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:request_params_max_tokens": {
+            "description": "Histogram of the max_tokens request parameter.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "1.0": 0,
+                  "10.0": 0,
+                  "100.0": 0,
+                  "1000.0": 64,
+                  "10000.0": 64,
+                  "2.0": 0,
+                  "20.0": 0,
+                  "200.0": 0,
+                  "2000.0": 64,
+                  "20000.0": 64,
+                  "5.0": 0,
+                  "50.0": 0,
+                  "500.0": 64,
+                  "5000.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 256.0,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 200.0,
+                  "p1_estimate": 200.0,
+                  "p25_estimate": 200.0,
+                  "p50_estimate": 241.2734375,
+                  "p5_estimate": 200.0,
+                  "p75_estimate": 315.1015625,
+                  "p90_estimate": 359.3984375,
+                  "p95_estimate": 374.1640625,
+                  "p99_estimate": 385.9765625,
+                  "sum": 16384.0,
+                  "sum_rate": 531.5726567703255
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:request_params_n": {
+            "description": "Histogram of the n request parameter.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "1.0": 64,
+                  "10.0": 64,
+                  "2.0": 64,
+                  "20.0": 64,
+                  "5.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 1.0,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 0.5062500000000001,
+                  "p1_estimate": 0.41765625,
+                  "p25_estimate": 0.65390625,
+                  "p50_estimate": 0.9,
+                  "p5_estimate": 0.45703125,
+                  "p75_estimate": 1.0,
+                  "p90_estimate": 1.0,
+                  "p95_estimate": 1.0,
+                  "p99_estimate": 1.0,
+                  "sum": 64.0,
+                  "sum_rate": 2.076455690509084
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:request_prefill_kv_computed_tokens": {
+            "description": "Histogram of new KV tokens computed during prefill (excluding cached tokens).",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "1.0": 0,
+                  "10.0": 64,
+                  "100.0": 64,
+                  "1000.0": 64,
+                  "10000.0": 64,
+                  "2.0": 0,
+                  "20.0": 64,
+                  "200.0": 64,
+                  "2000.0": 64,
+                  "20000.0": 64,
+                  "5.0": 64,
+                  "50.0": 64,
+                  "500.0": 64,
+                  "5000.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 3.0,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 2.0,
+                  "p1_estimate": 2.0,
+                  "p25_estimate": 2.2200927734375,
+                  "p50_estimate": 2.9583740234375,
+                  "p5_estimate": 2.0,
+                  "p75_estimate": 3.6966552734375,
+                  "p90_estimate": 4.1396240234375,
+                  "p95_estimate": 4.287280273437499,
+                  "p99_estimate": 4.4054052734375,
+                  "sum": 192.0,
+                  "sum_rate": 6.229367071527252
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:request_prefill_time_seconds": {
+            "description": "Histogram of time spent in PREFILL phase for request.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "0.3": 64,
+                  "0.5": 64,
+                  "0.8": 64,
+                  "1.0": 64,
+                  "1.5": 64,
+                  "10.0": 64,
+                  "120.0": 64,
+                  "15.0": 64,
+                  "1920.0": 64,
+                  "2.0": 64,
+                  "2.5": 64,
+                  "20.0": 64,
+                  "240.0": 64,
+                  "30.0": 64,
+                  "40.0": 64,
+                  "480.0": 64,
+                  "5.0": 64,
+                  "50.0": 64,
+                  "60.0": 64,
+                  "7680.0": 64,
+                  "960.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 0.022923492168047233,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 0.016865771397075315,
+                  "p1_estimate": 0.015502784223606632,
+                  "p25_estimate": 0.019137416686189783,
+                  "p50_estimate": 0.022923492168047233,
+                  "p5_estimate": 0.016108556300703826,
+                  "p75_estimate": 0.026709567649904682,
+                  "p90_estimate": 0.028981212939019153,
+                  "p95_estimate": 0.02973842803539064,
+                  "p99_estimate": 0.030344200112487833,
+                  "sum": 1.4671034987550229,
+                  "sum_rate": 0.047599615758682094
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:request_prompt_tokens": {
+            "description": "Number of prefill tokens processed.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "1.0": 0,
+                  "10.0": 0,
+                  "100.0": 0,
+                  "1000.0": 0,
+                  "10000.0": 64,
+                  "2.0": 0,
+                  "20.0": 0,
+                  "200.0": 0,
+                  "2000.0": 0,
+                  "20000.0": 64,
+                  "5.0": 0,
+                  "50.0": 0,
+                  "500.0": 0,
+                  "5000.0": 0
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 7187.0,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 5208.453125,
+                  "p1_estimate": 5000.0,
+                  "p25_estimate": 5946.734375,
+                  "p50_estimate": 7177.203125,
+                  "p5_estimate": 5004.31484375,
+                  "p75_estimate": 8407.671875,
+                  "p90_estimate": 9145.953125,
+                  "p95_estimate": 9392.046875,
+                  "p99_estimate": 9588.921875,
+                  "sum": 459968.0,
+                  "sum_rate": 14923.487047688786
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:request_queue_time_seconds": {
+            "description": "Histogram of time spent in WAITING phase for request.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "0.3": 64,
+                  "0.5": 64,
+                  "0.8": 64,
+                  "1.0": 64,
+                  "1.5": 64,
+                  "10.0": 64,
+                  "120.0": 64,
+                  "15.0": 64,
+                  "1920.0": 64,
+                  "2.0": 64,
+                  "2.5": 64,
+                  "20.0": 64,
+                  "240.0": 64,
+                  "30.0": 64,
+                  "40.0": 64,
+                  "480.0": 64,
+                  "5.0": 64,
+                  "50.0": 64,
+                  "60.0": 64,
+                  "7680.0": 64,
+                  "960.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 0.000013693708751816303,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 0.0000136937087518163,
+                  "p1_estimate": 0.0000136937087518163,
+                  "p25_estimate": 0.0000136937087518163,
+                  "p50_estimate": 0.0000136937087518163,
+                  "p5_estimate": 0.0000136937087518163,
+                  "p75_estimate": 0.0000136937087518163,
+                  "p90_estimate": 0.0000136937087518163,
+                  "p95_estimate": 0.0000136937087518163,
+                  "p99_estimate": 0.0000136937087518163,
+                  "sum": 0.0008763973601162434,
+                  "sum_rate": 0.000028434379461883006
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:request_success": {
+            "description": "Count of successfully processed requests.",
+            "series": [
+              {
+                "labels": {
+                  "engine": "0",
+                  "finished_reason": "stop",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "engine": "0",
+                  "finished_reason": "length",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 2.076455690509084,
+                  "total": 64.0
+                }
+              },
+              {
+                "labels": {
+                  "engine": "0",
+                  "finished_reason": "abort",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "engine": "0",
+                  "finished_reason": "error",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              },
+              {
+                "labels": {
+                  "engine": "0",
+                  "finished_reason": "repetition",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "rate": 0.0,
+                  "total": 0.0
+                }
+              }
+            ],
+            "type": "counter"
+          },
+          "vllm:request_time_per_output_token_seconds": {
+            "description": "Histogram of time_per_output_token_seconds per request.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "0.01": 64,
+                  "0.025": 64,
+                  "0.05": 64,
+                  "0.075": 64,
+                  "0.1": 64,
+                  "0.15": 64,
+                  "0.2": 64,
+                  "0.3": 64,
+                  "0.4": 64,
+                  "0.5": 64,
+                  "0.75": 64,
+                  "1.0": 64,
+                  "10.0": 64,
+                  "2.5": 64,
+                  "20.0": 64,
+                  "40.0": 64,
+                  "5.0": 64,
+                  "7.5": 64,
+                  "80.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 0.007117300204360355,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 0.005218540206842804,
+                  "p1_estimate": 0.004766130276590925,
+                  "p25_estimate": 0.005972556757262604,
+                  "p50_estimate": 0.007229251007962269,
+                  "p5_estimate": 0.004967201356702871,
+                  "p75_estimate": 0.008485945258661934,
+                  "p90_estimate": 0.008712561706901557,
+                  "p95_estimate": 0.008717806807041489,
+                  "p99_estimate": 0.008722002887153437,
+                  "sum": 0.4555072130790627,
+                  "sum_rate": 0.014778758510405526
+                }
+              }
+            ],
+            "type": "histogram"
+          },
+          "vllm:time_to_first_token_seconds": {
+            "description": "Histogram of time to first token in seconds.",
+            "series": [
+              {
+                "buckets": {
+                  "+Inf": 64,
+                  "0.001": 0,
+                  "0.005": 0,
+                  "0.01": 0,
+                  "0.02": 0,
+                  "0.04": 0,
+                  "0.06": 1,
+                  "0.08": 28,
+                  "0.1": 55,
+                  "0.25": 64,
+                  "0.5": 64,
+                  "0.75": 64,
+                  "1.0": 64,
+                  "10.0": 64,
+                  "160.0": 64,
+                  "2.5": 64,
+                  "20.0": 64,
+                  "2560.0": 64,
+                  "40.0": 64,
+                  "5.0": 64,
+                  "640.0": 64,
+                  "7.5": 64,
+                  "80.0": 64
+                },
+                "labels": {
+                  "engine": "0",
+                  "model_name": "swiss-ai/Apertus-v1.5-8B"
+                },
+                "stats": {
+                  "avg": 0.08549636974930763,
+                  "count": 64,
+                  "count_rate": 2.076455690509084,
+                  "p10_estimate": 0.07161289695649807,
+                  "p1_estimate": 0.06228774712333878,
+                  "p25_estimate": 0.07461563788120244,
+                  "p50_estimate": 0.08088291971738452,
+                  "p5_estimate": 0.07061198331492995,
+                  "p75_estimate": 0.09190069189744729,
+                  "p90_estimate": 0.1,
+                  "p95_estimate": 0.11500389730185244,
+                  "p99_estimate": 0.1570038973018525,
+                  "sum": 5.4717676639556885,
+                  "sum_rate": 0.17752942348381853
+                }
+              }
+            ],
+            "type": "histogram"
+          }
+        }
+      }
+    },
+    "endpoints_configured": [
+      "http://localhost:8090/metrics"
+    ],
+    "endpoints_successful": [
+      "http://localhost:8090/metrics"
+    ],
+    "error_summary": [],
+    "start_ns": 1790023839957593555,
+    "warmup_end_ns": 1790023840010440370
+  },
+  "phase": {
+    "end_ns": 1790023870721740935,
+    "phase_index": 1,
+    "phase_kind": "profiling",
+    "phase_name": "profiling",
+    "profiling_index": 0,
+    "start_ns": 1790023839957628733,
+    "was_cancelled": false
+  },
+  "schema_version": 1,
+  "warnings": []
+}

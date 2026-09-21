@@ -1,0 +1,13 @@
+# Dynamo runtime installed INTO the Swiss AI vLLM fork (the only vLLM that knows apertus1p5).
+# DYNAMO_VERSION must match the fork's vLLM base (fork = vLLM 0.23.x -> ai-dynamo 1.3.1, which pins vllm 0.23.0).
+ARG FORK_IMAGE=ghcr.io/swiss-ai/vllm_apertus_1.5_release:latest-amd64
+FROM ${FORK_IMAGE}
+ARG DYNAMO_VERSION=1.3.1
+RUN pip freeze > /opt/pip_before.txt
+# No [vllm] extra -> must not replace the forked vLLM
+RUN pip install --no-cache-dir "ai-dynamo==${DYNAMO_VERSION}"
+RUN pip freeze > /opt/pip_after.txt
+COPY check_fork.py /opt/check_fork.py
+# Fails on purpose if the fork got overwritten OR Dynamo imports vLLM symbols the fork lacks.
+RUN python /opt/check_fork.py
+ENTRYPOINT []

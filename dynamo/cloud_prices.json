@@ -1,0 +1,7 @@
+{
+  "_note": "Fill in real list prices (per 1M tokens, same currency as GPU_PRICE_PER_HOUR) and set verified=true. Unverified entries are ignored.",
+  "apis": [
+    {"name": "Cloud API A (e.g. hosted Apertus / similar 8B)", "input_per_1m": null, "output_per_1m": null, "source": "", "verified": false},
+    {"name": "Cloud API B (frontier model)",                  "input_per_1m": null, "output_per_1m": null, "source": "", "verified": false}
+  ]
+}
