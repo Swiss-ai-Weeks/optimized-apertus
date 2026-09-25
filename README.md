@@ -91,3 +91,15 @@ Legend: OK = verified end-to-end &nbsp;|&nbsp; ~cfg = config accepted, not full-
 |----------|-------|--------|:---:|
 | `:8000`  | Apertus-8B-Instruct-2509 | NIM (text)          | 0 |
 | `:8020`  | Apertus-v1.5-8B          | swiss-ai (multimodal) | 1 |
+
+---
+
+## Dynamo track (C05–C08) — results and reproduction
+
+See [`dynamo/README.md`](dynamo/README.md): what we deployed, benchmark results,
+tokenomics, how to reproduce, and limitations.
+Collected results for all configurations are in [`results-final/`](results-final/).
+
+**Note:** `bench/22_collect.py` mis-reads AIPerf 0.12 output (warm-up data overwrites the
+real measurement, ~30% error). Use [`dynamo/22_collect_fixed.py`](dynamo/22_collect_fixed.py)
+— see [`dynamo/COLLECTOR_BUG.md`](dynamo/COLLECTOR_BUG.md).
