@@ -1,1 +1,0 @@
-mode=dyn-2w-rr router=round-robin workers=2 started

@@ -115,7 +115,7 @@ if [[ $KIND == dynamo-disagg ]]; then
   python3 - "$FE_PORT" "$MODEL" <<'PY' &
 import json, sys, threading, urllib.request
 port, model = sys.argv[1], sys.argv[2]
-prompt = " ".join(f"word{i % 997}" for i in range(3000)) + "\nSummarise the text above in one sentence."
+prompt = " ".join(f"word{i % 997}" for i in range(1200)) + "\nSummarise the text above in one sentence."
 def one():
     body = json.dumps({"model": model, "max_tokens": 16, "messages": [{"role": "user", "content": prompt}]}).encode()
     try: urllib.request.urlopen(urllib.request.Request(f"http://localhost:{port}/v1/chat/completions", body, {"Content-Type": "application/json"}), timeout=120).read()

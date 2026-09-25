@@ -1,0 +1,70 @@
+nohup: ignoring input
+== sweep: system=h100nvl-conf07 workload=chat isl=512 osl=256 ==
+-- concurrency 1
+   slo: ok
+-- concurrency 4
+   slo: ok
+-- concurrency 16
+   slo: ok
+-- concurrency 64
+   slo: ok
+-- concurrency 128
+   slo: ok
+== done. collect with: python3 bench/22_collect.py --root /home/nvidia/apertus-benchmark/results/artifacts_c07/bench ==
+== sweep: system=h100nvl-conf07 workload=rag isl=4096 osl=256 ==
+-- concurrency 1
+   slo: ok
+-- concurrency 4
+   slo: ok
+-- concurrency 16
+   slo: ok
+-- concurrency 64
+   slo: ok
+-- concurrency 128
+   slo: ok
+== done. collect with: python3 bench/22_collect.py --root /home/nvidia/apertus-benchmark/results/artifacts_c07/bench ==
+== sweep: system=h100nvl-conf07 workload=summarize isl=7500 osl=200 ==
+-- concurrency 1
+   slo: ok
+-- concurrency 4
+   slo: ok
+-- concurrency 16
+   slo: ok
+-- concurrency 64
+   slo: ok
+-- concurrency 128
+   slo: ok
+== done. collect with: python3 bench/22_collect.py --root /home/nvidia/apertus-benchmark/results/artifacts_c07/bench ==
+== sweep: system=h100nvl-conf07 workload=agent isl=1024 osl=1024 ==
+-- concurrency 1
+   slo: ok
+-- concurrency 4
+   slo: ok
+-- concurrency 16
+   slo: ok
+-- concurrency 64
+   slo: ok
+-- concurrency 128
+   slo: ok
+== done. collect with: python3 bench/22_collect.py --root /home/nvidia/apertus-benchmark/results/artifacts_c07/bench ==
+== sweep: system=h100nvl-conf07 workload=batch isl=1024 osl=128 ==
+-- concurrency 1
+-- concurrency 4
+-- concurrency 16
+-- concurrency 64
+-- concurrency 128
+== done. collect with: python3 bench/22_collect.py --root /home/nvidia/apertus-benchmark/results/artifacts_c07/bench ==
+SKIP 'longctx': needs --max-model-len >= 131072, server is at 8192.
+  restart with: MAX_MODEL_LEN=131072 bash serve/15_serve_v15.sh
+== sweep: system=h100nvl-conf07 workload=think isl=512 osl=2048 ==
+-- concurrency 1
+   slo: ok
+-- concurrency 4
+   slo: ok
+-- concurrency 16
+   slo: ok
+-- concurrency 64
+   slo: ok
+-- concurrency 128
+   slo: ok
+== done. collect with: python3 bench/22_collect.py --root /home/nvidia/apertus-benchmark/results/artifacts_c07/bench ==
